@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+h1 {text-align: center;}
+form {text-align: center;}
+p {text-align: center;}
+a {text-align: center;}
+</style>
+<br>
+<br>
+<br>
+<br>
+<h1>TaskMaster</h1>
+
+<form action="/action_page.php" onsubmit = "passwordCheck()">
+  <label for="username">Username:</label><br>
+  <input type="text" id="username" name="username"><br>
+  <label for="password">Password:</label><br>
+  <input type="text" id="password" name="password"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+<p><a href="createacc.html">Don't have an account?</a></p>
+<p id = "demo"> If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php"</p>
+
+<script>
+function passwordCheck(){
+	var username = document.getElementById("username").value)
+	if (username == "hello"){
+		document.getElementById("demo").innerHTML = "form submitted";
+	}
+}
+</script>
+
+<body>
+</html>
