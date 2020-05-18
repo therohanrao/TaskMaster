@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+</style>
+
+
+<body>
+
+<center><h1>Create Account</h1></center>
+
+<p>
+<center>
+<form action="/action_page.php">
+  <label for="username">Username:</label><br>
+  <input type="text" id="username" name="username"><br>
+  <label for="pwd">Password:</label><br>
+  <input type="password" id="pwd" name="pwd"><br><br>
+  <label for="pwd">Confirm Password:</label><br>
+  <input type="password" id="pwd2" name="pwd2"><br><br>  
+  <input type="submit" value="Create Account">
+</form>
+</center>
+</p>
+
+<script>
+  if(document.getElementById("pwd").innerHTML != document.getElementById("pwd2").innerHTML)
+  {
+  	
+  }
+  	
+</script>
+
+</body>
+</html>
