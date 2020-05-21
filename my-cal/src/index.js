@@ -1,68 +1,65 @@
 let http = require('http');
 let fs = require('fs');
-let path = require('path');
+const path = require('path');
+const morgan = require('morgan');
 const mysql = require('mysql');
+const express = require('express');
+const bodyParser = require('body-parser');
 
-let handleRequest = (request, response) => {
-    response.writeHead(200, {
-        'Content-Type': 'text/html'
-    });
-    if(request.url.match("\.html$")){
-        fs.readFile('./src' + request.url, null, function (error, data) {
-            if (error) {
-                response.writeHead(404);
-                response.write(request.url);
-                response.write('Whoops! File not found!');
-            } else {
-                response.write(data);
-            }
-            response.end();
-        });
-    } else if (request.url.match("\.php$")){
-        fs.readFile('./src' + request.url, null, function (error, data) {
-            if (error) {
-                response.writeHead(404);
-                response.write(request.url);
-                response.write('Whoops! File not found!');
-            } else {
-                response.write(data);
-            }
-            response.end();
-        });	
+var app = express();
+var jsonParser = bodyParser.json();
+
+app.get('/', function(req, res) {
+    console.log('Called 1.');
+    res.sendFile(path.join(__dirname + '/index.html'));
+});
+
+app.get('/about', function(req, res) {
+    console.log('Called 2.');
+    res.sendFile(path.join(__dirname + '/about.html'));
+});
+
+app.get('/create', function(req, res) {
+    console.log('Called 3.');
+    res.sendFile(path.join(__dirname + '/create-account.html'));
+});
+
+var dbConfig = mysql.createConnection({
+    host: '127.0.0.1',
+    user: 'root',
+    password: '',
+    database: 'users',
+    port: '3306'
+});
+
+dbConfig.connect((err) => {
+    if (!err) {
+        console.log('DB connection succeeded.');
     } else {
-        fs.readFile('./src/index.html', null, function (error, data) {
-            if (error) {
-                response.writeHead(404);
-                response.write('Whoops! File not found!');
-            } else {
-                response.write(data);
-            }
-            response.end();
-        });
+        console.log('DB connection failed \n Error : ' + JSON.stringify(err, undefined, 2));
     }
-};
-
-http.createServer(handleRequest).listen(8000);
-
-const connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database : "users",
-    port: 3306
 });
 
-connection.connect(function(err) {
-    if(err) {
-        console.log("An error occurred with connection.");
-    }
-    console.log("Connected!");
-});
+app.listen(8000,()=>console.log('Express server is running at port no. 8000'));
 
-connection.query("INSERT INTO users (em, agreement, sq, sa, un, pw) VALUES ('brianchap@protonmail.com', '1', 'Who is the Eggman?', 'Eggert', 'Brian', 'Brian')", function(err, result) {
-    if (err) {
-        console.log("An error occurred performing the query.");
-        return;
-    }
-    console.log("Query successfully executed");
+app.use(express.static(path.join(__dirname + '/create-account.html')))
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(morgan('short'));
+
+app.post('/addUser', function(request, response) {
+    var em2 = request.body.em;
+    var sq2 = request.body.sq;
+    var sa2 = request.body.sa;
+    var un2 = request.body.username;
+    var pwd2 = request.body.pwd;
+    console.log(em2);
+    dbConfig.query("INSERT INTO users (em, agreement, sq, sa, un, pw) VALUES ( ?, '1', ?, ?, ?, ?);", [em2, sq2, sa2, un2, pwd2], (err, rows, fields)=>{
+        if(!err) {
+            console.log(rows);
+        } else {
+            console.log(err);
+        }
+    });
+    return response.redirect('/');
 });
