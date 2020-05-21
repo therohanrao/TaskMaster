@@ -24,11 +24,29 @@ app.get('/create', function(req, res) {
     res.sendFile(path.join(__dirname + '/create-account.html'));
 });
 
+app.get('/calendar', function(req, res) {
+    console.log('Called 4.');
+    res.sendFile(path.join(__dirname + '/calendar.html'));
+});
+
+app.get('/taskadd', function(req, res) {
+    console.log('Called 5.');
+    res.sendFile(path.join(__dirname + '/taskadd.html'));
+});
+
 var dbConfig = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
     password: '',
     database: 'users',
+    port: '3306'
+});
+
+var dbConfig2 = mysql.createConnection({
+    host: '127.0.0.1',
+    user: 'root',
+    password: '',
+    database: 'tasks',
     port: '3306'
 });
 
@@ -40,10 +58,19 @@ dbConfig.connect((err) => {
     }
 });
 
+dbConfig2.connect((err) => {
+    if (!err) {
+        console.log('DB connection succeeded.');
+    } else {
+        console.log('DB connection failed \n Error : ' + JSON.stringify(err, undefined, 2));
+    }
+});
+
 app.listen(8000,()=>console.log('Express server is running at port no. 8000'));
 
 app.use(express.static(path.join(__dirname + '/create-account.html')));
-app.use(express.static(path.join(__dirname + '/index.html')))
+app.use(express.static(path.join(__dirname + '/index.html')));
+app.use(express.static(path.join(__dirname + '/taskadd.html')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(morgan('short'));
@@ -69,10 +96,27 @@ app.post('/login', function(request, response) {
     var pwd2 = request.body.password;
     dbConfig.query("SELECT * FROM users WHERE un = ? AND pw = ?", [un2, pwd2], (err, rows, fields)=>{
         if (rows.length > 0) {
-            console.log('You have logged in.');
+            return response.redirect('/calendar');
         } else {
             console.log('Invalid credentials.');
+            return response.redirect('/');
         }
     });
-    return response.redirect('/');
+});
+
+app.post('/addTask', function(request, response) {
+    var na2 = request.body.name;
+    var de2 = request.body.description;
+    dbConfig2.query("INSERT INTO tasks (name, description) VALUES (?, ?);", [na2, de2], (err, rows, fields)=>{
+        if(!err) {
+            console.log(rows);
+        } else {
+            console.log(err);
+        }
+    });
+    return response.redirect('/calendar');
+});
+
+app.post('/redirect1', function(request, response) {
+    return response.redirect('/taskadd');
 });
