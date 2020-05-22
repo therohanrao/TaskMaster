@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 
 <style>
@@ -24,7 +24,7 @@ body {
 
 <p>
 <center>
-<form id="msform" method="get" name="form" action="/submit">
+<form action="/addUser" method="POST">
   <label for="username">Username:</label><br>
   <input type="text" id="username" name="username"><br>
   <label for="pwd">Password:</label><br>
@@ -37,69 +37,9 @@ body {
   <input type="text" id="sq" name="sq"><br>
   <label for="sa">Security Answer:</label><br>
   <input type="text" id="sa" name="sa"><br>  
-  <input type="submit" value="Create Account">
-</form>
+  <input type="submit" id="submit" name="submit" value="Create Account">
 </center>
 </p>
-
-<script type="text/javascript">
-
-var express = require('express');
-var app = express();
-var sql = require('mysql');
-var bodyParser = require('body-parser');
-
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-
-var connection = {
-    host: "localhost",
-    user: "root",
-    password: "",
-    database : "users",
-    port: 3306
-};
-
-var server = app.listen(8000, "127.0.0.1", function () {
-    var port = server.address().port
-});
-
-var executeQuery = function(res, query) {
-    sql.connect(connection, function(err) {
-        if(err) {
-            console.log("An error occurred with connection.");
-            res.send(err);
-        } else {
-            var request = new sql.Request();
-            request.query(query, function(err, rs) {
-                if (err) {
-                    console.log("Query error.");
-                    res.send(err);
-                } else {
-                    res.send(rs);
-                    sql.close();
-                }
-            });
-        }
-    });
-};
-         
-
-app.post('/submit', function(req, res) {
-    var formData = {
-        em: req.body.email,
-        sq: req.body.sq,
-        sa: req.body.sa,
-        un: req.body.username,
-        pw: req.body.password
-    };
-    connection.query('INSERT INTO users (em, agreement, sq, sa, un, pw) VALUES ('${formData.em}', '1', '${formData.sq}', '${formData.sa}', '${formData.un}', '${formData.pw}')';
-    console.log(query);
-    executeQuery (res, query);
-});
-
-</script>
 
 </body>
 </html>

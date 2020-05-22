@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+
+<style>
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+</style>
+
+<body>
+
+<center><h1>Find Tasks</h1></center>
+
+<p>
+<center>
+<form action="/findTask" method="POST">
+  <label for="name">Find By Name:</label><br>
+  <input type="text" id="name" name="name"><br>
+  <input type="submit" id="submit" name="submit" value="Find Task">
+</form>
+
+<form action="/findTask2" method="POST">
+  <label for="description">Find By Description:</label><br>
+  <input type="description" id="description" name="description"><br>
+  <input type="submit" id="submit" name="submit" value="Find Task">
+</form>
+</center>
+</p>
+
+</body>
+</html>

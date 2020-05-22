@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
+<body>
 <style>
 h1 {text-align: center;}
 form {text-align: center;}
@@ -39,9 +40,9 @@ body {
 
 </style>
 <ul>
-  <li><a href="index.html">Home</a></li>
+  <li class="active"><a href="/">Home</a></li>
   <li><a href="#contact">Contact</a></li>
-  <li><a href="about.html">About</a></li>
+  <li><a href="/about">About</a></li>
 </ul>
 <br>
 <br>
@@ -49,7 +50,7 @@ body {
 <br>
 <h1>TaskMaster</h1>
 
-<form action="./action_page.php" onsubmit = "passwordCheck()">
+<form action="/login" method="POST">
   <label for="username">Username:</label><br>
   <input type="text" id="username" name="username"><br>
   <label for="password">Password:</label><br>
@@ -57,10 +58,8 @@ body {
   <input type="submit" value="Submit">
 </form> 
 
-<a href="./create-account.html"><p>Don't have an account?</p></a>
+<a href="/create"><p>Don't have an account?</p></a>
 <p><a href="./forgot.html">Forgot your password?</a></p>
-
-<p id = "demo"> If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php"</p>
 
 <script>
 function passwordCheck(){
