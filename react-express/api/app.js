@@ -10,6 +10,7 @@ var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 var testAPIRouter = require('./routes/testAPI');
 var invalidpwd = require('./routes/invalidpwd');
+var signUpRouter = require('./routes/signUpExp');
 var app = express();
 
 // view engine setup

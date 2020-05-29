@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import SignIn from './SignIn';
+import SignUp from './SignUp'
 
 var element = React.createElement('h1', {className: 'greetings'}, "hello world");
 var login = <SignIn/>

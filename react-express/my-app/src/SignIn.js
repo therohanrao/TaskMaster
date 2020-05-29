@@ -96,9 +96,9 @@ class SignIn extends React.Component {
               margin="normal"
               required
               fullWidth
-              id="username"
-              label="Username"
               name="username"
+              label="Username"
+              id="username"
               autoComplete="username"
               autoFocus
             />
