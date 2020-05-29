@@ -51,7 +51,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function myFunction(){
-    window.location.href = "./create-account.html";
+    fetch("./create-account.html")
+}
+
+function attemptLogin(){
+    var form = document.getElementByID("name-form");
+    console.log(form.username, form.password);
 }
 class SignIn extends React.Component {
 
@@ -75,7 +80,6 @@ class SignIn extends React.Component {
 
   render() {
     return (
-
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={useStyles.paper}>
@@ -86,7 +90,7 @@ class SignIn extends React.Component {
           <Typography component="h1" variant="h5" align='center'>
             Sign in
           </Typography>
-          <form action="http://localhost:8000/login" method="POST" className={useStyles.form} noValidate>
+      <form id="name-form" action="http://localhost:8000/login" method="POST" className={useStyles.form} noValidate>
             <TextField
               variant="outlined"
               margin="normal"
