@@ -29,18 +29,23 @@ app.get('/calendar', function(req, res) {
     res.sendFile(path.join(__dirname + '/calendar.html'));
 });
 
-app.get('/taskadd', function(req, res) {
+app.get('/invalidpwd', function(req, res) {
     console.log('Called 5.');
+    res.sendFile(path.join(__dirname + '/invalidpwd.html'));
+});
+
+app.get('/taskadd', function(req, res) {
+    console.log('Called 6.');
     res.sendFile(path.join(__dirname + '/taskadd.html'));
 });
 
 app.get('/taskfind', function(req, res) {
-    console.log('Called 6.');
+    console.log('Called 7.');
     res.sendFile(path.join(__dirname + '/taskfind.html'));
 });
 
 app.get('/tasklist', function(req, res) {
-    console.log('Called 7.');
+    console.log('Called 8.');
     res.sendFile(path.join(__dirname + '/task-list.html'));
 });
 
@@ -49,7 +54,7 @@ var dbConfig = mysql.createConnection({
     user: 'root',
     password: '',
     database: 'users',
-    port: '3306'
+    port: '8889'
 });
 
 var dbConfig2 = mysql.createConnection({
@@ -57,7 +62,7 @@ var dbConfig2 = mysql.createConnection({
     user: 'root',
     password: '',
     database: 'tasks',
-    port: '3306'
+    port: '8889'
 });
 
 dbConfig.connect((err) => {
@@ -102,7 +107,6 @@ app.post('/addUser', function(request, response) {
     });
     return response.redirect('/');
 });
-
 app.post('/login', function(request, response) {
     var un2 = request.body.username;
     var pwd2 = request.body.password;
@@ -111,8 +115,8 @@ app.post('/login', function(request, response) {
             return response.redirect('/calendar');
         } else {
             console.log('Invalid credentials.');
-            return response.redirect('/');
-        }
+	    response.redirect('/invalidpwd');
+	}
     });
 });
 
@@ -160,3 +164,4 @@ app.post('/redirect1', function(request, response) {
 app.post('/redirect2', function(request, response) {
     return response.redirect('/taskfind');
 });
+

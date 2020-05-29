@@ -1,30 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script type="text/javascript">
-function input(){
-var formData = {
-	'username' : $('input[id=username]').val(),
-	'password' : $('input[id=password]').val(),
-};
-	$.ajax({
-		url:"/login",
-		method:"POST",
-		data : formData,
-		dataType :'json'
-	});
-        console.log('ajax success!');
-	$.ajax({
-		url: '/login/',
-		type: 'GET',
-		dataType: 'json',
-		success: (data) =>{
-			console.log('ajax success!');
-		}
-	});
-}
-</script>
 </head>
 <body>
 <body>
@@ -75,27 +51,7 @@ body {
 <br>
 <br>
 <h1>TaskMaster</h1>
-
-<form id="form" action="/login" method="POST">
-  <label for="username">Username:</label><br>
-  <input type="text" id="username" name="username"><br>
-  <label for="password">Password:</label><br>
-  <input type="text" id="password" name="password"><br><br>
-  <input type="submit" id="submit" value="Submit" />
-</form> 
-<p id="invalid"></p>
-
-<a href="/create"><p>Don't have an account?</p></a>
-<p><a href="./forgot.html">Forgot your password?</a></p>
-
-<script>
-function passwordCheck(){
-	var username = document.getElementById("username").value)
-	if (username == "hello"){
-		document.getElementById("demo").innerHTML = "form submitted";
-	}
-}
-</script>
-
+<p>The username and/or password do not match our records.</p>
+<p><a href="/"> Return to login</a></p>
 <body>
 </html>
