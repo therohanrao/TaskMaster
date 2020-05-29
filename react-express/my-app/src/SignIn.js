@@ -50,7 +50,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
+function myFunction(){
+    window.location.href = "./create-account.html";
+}
 class SignIn extends React.Component {
 
   constructor(props) {
@@ -84,16 +86,16 @@ class SignIn extends React.Component {
           <Typography component="h1" variant="h5" align='center'>
             Sign in
           </Typography>
-          <form className={useStyles.form} noValidate>
+          <form action="http://localhost:8000/login" method="POST" className={useStyles.form} noValidate>
             <TextField
               variant="outlined"
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
+              id="username"
+              label="Username"
+              name="username"
+              autoComplete="username"
               autoFocus
             />
             <TextField
@@ -122,14 +124,14 @@ class SignIn extends React.Component {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <a href="javascript:myFunction()" variant="body2">
                   Forgot password?
-                </Link>
+                </a>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
+                <a href="javascript:myFunction()" variant="body2">
+                  Dont have an account? Sign Up
+                </a>
               </Grid>
             </Grid>
           </form>
