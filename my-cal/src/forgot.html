@@ -14,21 +14,11 @@ a {text-align: center;}
 <h1>TaskMaster</h1>
 <h1>Forgot Password</h1>
 
-<form action="./securityq.html" onsubmit = "usernameCheck()">
+<form action="/forgot2" method="POST">
   <label for="username">Username:</label><br>
   <input type="text" id="username" name="username"><br>
   <input type="submit" value="Submit">
 </form>
-
-<script>
-function usernameCheck(){
-  var username = document.getElementById("username").value)
-  if (username == "hi") {
-    return true;
-  }
-  return false;
-}
-</script>
 
 <body>
 </html>

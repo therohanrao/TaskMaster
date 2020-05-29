@@ -12,23 +12,14 @@ a {text-align: center;}
 <br>
 <br>
 <h1>TaskMaster</h1>
-<h1>Security Question</h1>
+<h1 id="h1"><%= name %></h1>
 
-<form action="./newpass.html" onsubmit = "securityCheck()">
+<form action="/newpass" method="POST">
   <label for="answer">Answer:</label><br>
   <input type="text" id="answer" name="answer"><br>
   <input type="submit" value="Submit">
 </form>
 
-<script>
-function securityCheck(){
-  var answer = document.getElementById("username").value)
-  if (answer == "answer") {
-    return true;
-  }
-  return false;
-}
-</script>
-
 <body>
+</body>
 </html>
