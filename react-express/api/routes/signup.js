@@ -6,7 +6,7 @@ var dbConfig = mysql.createConnection({
 	user: 'root',
 	password: '',
 	database: 'users',
-	port: '8889'
+	port: '3308'
     });
 dbConfig.connect((err) => {
 	if (!err) {

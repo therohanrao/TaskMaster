@@ -22,16 +22,9 @@ export default function BasicExample() {
   return (
     <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/SignIn">SignIn</Link>
-          </li>
-          <li>
+            <Link to="/">SignIn</Link>
+            <br></br>
             <Link to="/SignUp">SignUp</Link>
-          </li>
-        </ul>
-
-        <hr/>
 
         {/*
           A <Switch> looks through all its children <Route>
@@ -40,51 +33,23 @@ export default function BasicExample() {
           you have multiple routes, but you want only one
           of them to render at a time
         */}
+        
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
-          <Route path="/SignIn">
-            <SignIn/>
-          </Route>
           <Route path="/SignUp">
             <SignUp/>
           </Route>
+            {/*
+                NOTE!!!: ALWAYS make the path "/" last
+                This is because the router will search for any routes that match 
+                "/" and all the paths begin with "/". It'
+                
+          */}
+          <Route path="/">
+            <SignIn/>
+          </Route>
+
         </Switch>
       </div>
     </Router>
-  );
-}
-
-// You can think of these components as "pages"
-// in your app.
-
-function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-    </div>
-  );
-}
-
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-}
-
-function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
-    </div>
   );
 }
