@@ -10,7 +10,7 @@ var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 var testAPIRouter = require('./routes/testAPI');
 var invalidpwd = require('./routes/invalidpwd');
-//var signUpRouter = require('./routes/signUpExp');
+var signUpRouter = require('./routes/signup');
 var calendarRouter = require('./routes/calendar');
 var app = express();
 
@@ -31,6 +31,7 @@ app.use('/invalidpwd', invalidpwd);
 app.use('/users', usersRouter);
 app.use('/testAPI', testAPIRouter);
 app.use('/calendar', calendarRouter);
+app.use('/signup', signUpRouter);
 // catch 404 and forward to error handler
 //app.use(function(req, res, next) {
 //  next(createError(404));

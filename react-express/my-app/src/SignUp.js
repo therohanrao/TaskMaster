@@ -90,7 +90,7 @@ class SignUp extends React.Component {
           <Typography component="h1" variant="h5" align='center'>
             Sign Up
           </Typography>
-      <form id="name-form" action="http://localhost:8000/SignUpExp" method="POST" className={useStyles.form} noValidate>
+      <form id="name-form" action="http://localhost:8000/signup" method="POST" className={useStyles.form} noValidate>
       <TextField
               variant="outlined"
               margin="normal"
