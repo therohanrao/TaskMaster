@@ -54,7 +54,7 @@ var dbConfig = mysql.createConnection({
     user: 'root',
     password: '',
     database: 'users',
-    port: '8889'
+    port: '3308'
 });
 
 var dbConfig2 = mysql.createConnection({
@@ -62,7 +62,7 @@ var dbConfig2 = mysql.createConnection({
     user: 'root',
     password: '',
     database: 'tasks',
-    port: '8889'
+    port: '3308'
 });
 
 dbConfig.connect((err) => {
