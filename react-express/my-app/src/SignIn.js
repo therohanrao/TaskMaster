@@ -14,6 +14,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Logo from './TMLogo';
 import LogoBackground from './JR_logo.png';
+import {Link as RouterLink} from "react-router-dom";
 
 
 function Copyright() {
@@ -128,14 +129,14 @@ class SignIn extends React.Component {
             </Button>
             <Grid container>
               <Grid item xs>
-                <a href="javascript:myFunction()" variant="body2">
-                  Forgot password?
-                </a>
+                  <RouterLink to="/ForgotPass">
+                    Forgot your password?
+                  </RouterLink>
               </Grid>
-              <Grid item>
-                <a href="javascript:myFunction()" variant="body2">
-                  Dont have an account? Sign Up
-                </a>
+              <Grid item >
+                  <RouterLink to="/SignUp">
+                    Don't have an account? Sign up!
+                  </RouterLink>
               </Grid>
             </Grid>
           </form>

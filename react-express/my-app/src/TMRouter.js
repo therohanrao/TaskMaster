@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+import ForgotPass from './ForgotPass'
 
 
 // This site has 3 pages, all of which are rendered
@@ -22,34 +23,37 @@ export default function BasicExample() {
   return (
     <Router>
       <div>
-            <Link to="/">SignIn</Link>
-            <br></br>
-            <Link to="/SignUp">SignUp</Link>
+      <Switch>
+          <Route path="/SignUp">
+            <SignUp/>
+          </Route>
+          <Route path="/ForgotPass">
+            <ForgotPass/>
+          </Route>
+          <Route path="/">
+            <SignIn/>
+          </Route>
+        </Switch>
+        </div>
+    </Router>
+        /*
+            NOTE!!!: ALWAYS make the path "/" last
+            This is because the router will search for any routes that match 
+            "/" and all the paths begin with "/". It'     
+        */
 
-        {/*
+        /* EXAMPLE of how to link:
+            <Link to="/">SignIn</Link>
+            <Link to="/SignUp">SignUp</Link>
+        */
+        /*
           A <Switch> looks through all its children <Route>
           elements and renders the first one whose path
           matches the current URL. Use a <Switch> any time
           you have multiple routes, but you want only one
           of them to render at a time
-        */}
-        
-        <Switch>
-          <Route path="/SignUp">
-            <SignUp/>
-          </Route>
-            {/*
-                NOTE!!!: ALWAYS make the path "/" last
-                This is because the router will search for any routes that match 
-                "/" and all the paths begin with "/". It'
-                
-          */}
-          <Route path="/">
-            <SignIn/>
-          </Route>
+        */
 
-        </Switch>
-      </div>
-    </Router>
+
   );
 }
