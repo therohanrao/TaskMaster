@@ -11,6 +11,7 @@ var loginRouter = require('./routes/login');
 var testAPIRouter = require('./routes/testAPI');
 var invalidpwd = require('./routes/invalidpwd');
 var signUpRouter = require('./routes/signUpExp');
+var calendarRouter = require('./routes/calendar');
 var app = express();
 
 // view engine setup
@@ -29,6 +30,7 @@ app.use('/login', loginRouter);
 app.use('/invalidpwd', invalidpwd);
 app.use('/users', usersRouter);
 app.use('/testAPI', testAPIRouter);
+app.use('/calendar', calendarRouter);
 // catch 404 and forward to error handler
 //app.use(function(req, res, next) {
 //  next(createError(404));
