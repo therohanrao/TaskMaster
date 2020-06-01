@@ -14,7 +14,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Logo from './TMLogo';
 import LogoBackground from './JR_logo.png';
-import {Link as RouterLink} from "react-router-dom";
 
 
 function Copyright() {
@@ -51,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-class SignIn extends React.Component {
+class SignUp extends React.Component {
 
   constructor(props) {
     super(props);
@@ -69,7 +68,7 @@ class SignIn extends React.Component {
   }
 
   //API STUFF ^^
-  //Sign in page STUFF vv
+  //Sign up page STUFF vv
 
   render() {
     return (
@@ -78,13 +77,13 @@ class SignIn extends React.Component {
         <div className={useStyles.paper}>
           <Typography align='center'> 
           <p className="App-intro"> {this.state.apiResponse}</p>
-            <Logo/> 
+            <Logo/>
           </Typography>
           <Typography component="h1" variant="h5" align='center'>
-            Sign in
+            Sign Up
           </Typography>
-      <form id="name-form" action="http://localhost:8000/login" method="POST" className={useStyles.form} noValidate>
-            <TextField
+      <form id="name-form" action="http://localhost:8000/signup" method="POST" className={useStyles.form} noValidate>
+      <TextField
               variant="outlined"
               margin="normal"
               required
@@ -106,10 +105,52 @@ class SignIn extends React.Component {
               id="password"
               autoComplete="current-password"
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password2"
+              label="Confirm Password"
+              type="password"
+              id="password2"
+              autoComplete="current-password"
             />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="email"
+              label="Email"
+              id="email"
+              autoComplete="email"
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="securityquestion"
+              label="Security Question"
+              id="securityquestion"
+              autoComplete="security-question"
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="securityanswer"
+              label="Security Answer"
+              id="securityanswer"
+              autoComplete="security-answer"
+              autoFocus
+            />
+            <br></br>
+            <br></br>
             <Button
               type="submit"
               fullWidth
@@ -117,28 +158,17 @@ class SignIn extends React.Component {
               color="primary"
               className={useStyles.submit}
             >
-              Sign In
+              Create Account
             </Button>
-            <Grid container>
-              <Grid item xs>
-                  <RouterLink to="/ForgotPass">
-                    Forgot your password?
-                  </RouterLink>
-              </Grid>
-              <Grid item >
-                  <RouterLink to="/SignUp">
-                    Don't have an account? Sign up!
-                  </RouterLink>
-              </Grid>
-            </Grid>
           </form>
         </div>
         <Box mt={8}>
           <Copyright />
         </Box>
+        <br></br>
       </Container>
     );
   }
 }
 
-export default SignIn;
+export default SignUp;

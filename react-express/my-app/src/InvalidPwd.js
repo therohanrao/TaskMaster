@@ -16,7 +16,6 @@ import Logo from './TMLogo';
 import LogoBackground from './JR_logo.png';
 import {Link as RouterLink} from "react-router-dom";
 
-
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -51,11 +50,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-class SignIn extends React.Component {
+class InvalidPwd extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = { apiResponse: "API not working" };
+    this.render(props.go);
   }
   
   callAPI() {
@@ -64,7 +64,7 @@ class SignIn extends React.Component {
         .then(res => this.setState({ apiResponse: res }));
   }
   
-  componentWillMount() {
+  componentDidMount() {
     this.callAPI();
   }
 
@@ -80,8 +80,8 @@ class SignIn extends React.Component {
           <p className="App-intro"> {this.state.apiResponse}</p>
             <Logo/> 
           </Typography>
-          <Typography component="h1" variant="h5" align='center'>
-            Sign in
+          <Typography component="h1" variant="h5" align='center' color='error'>
+            Invalid Information, Try Again
           </Typography>
       <form id="name-form" action="http://localhost:8000/login" method="POST" className={useStyles.form} noValidate>
             <TextField
@@ -141,4 +141,4 @@ class SignIn extends React.Component {
   }
 }
 
-export default SignIn;
+export default InvalidPwd;
