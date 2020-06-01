@@ -8,6 +8,7 @@ import {
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import ForgotPass from './ForgotPass'
+import MyCal from './MyCal'
 
 
 // This site has 3 pages, all of which are rendered
@@ -29,6 +30,9 @@ export default function BasicExample() {
           </Route>
           <Route path="/ForgotPass">
             <ForgotPass/>
+          </Route>
+          <Route path="/MyCal">
+            <MyCal/>
           </Route>
           <Route path="/">
             <SignIn/>

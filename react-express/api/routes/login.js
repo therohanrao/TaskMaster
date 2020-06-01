@@ -25,7 +25,8 @@ router.post('/', function(request, response) {
 	var pwd2 = request.body.password;
 	dbConfig.query("SELECT * FROM users WHERE un = ? AND pw = ?", [un2, pwd2], (err, rows, fields)=>{
 			   if (rows.length > 0) {
-			       response.redirect('/calendar');
+				   //response.redirect('/calendar');
+				   response.redirect('http://localhost:3000/MyCal');
 			   } else {
 			       console.log('Invalid credentials.');
 			       response.redirect('/invalidpwd');
