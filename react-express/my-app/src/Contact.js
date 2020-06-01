@@ -62,7 +62,6 @@ class Contact extends React.Component {
           <br></br>
             <strong>CONTACT US</strong>
             <br></br>
-            <br></br>
             Have a question? Want to comment? Need to bring up a concern? Feel free to contact any of our technicians, via email. 
             <br></br>
             <br></br>
