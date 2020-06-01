@@ -25,17 +25,20 @@ const Example = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <NavbarBrand href="/">TaskMaster</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+              <NavLink href="http://localhost:8000">About</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+              <NavLink href="http://localhost:8000">Contact</NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
+            <NavItem>
+              <NavLink href="http://localhost:8000">GitHub</NavLink>
+            </NavItem>
+            {/*<UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Options
               </DropdownToggle>
@@ -51,9 +54,13 @@ const Example = (props) => {
                   Reset
                 </DropdownItem>
               </DropdownMenu>
-            </UncontrolledDropdown>
+            </UncontrolledDropdown> */}
           </Nav>
-          <NavbarText>Simple Text</NavbarText>
+          <Nav>
+            <NavItem>
+              <NavLink href="http://localhost:3000">Log Out</NavLink>
+            </NavItem>
+          </Nav>
         </Collapse>
       </Navbar>
     </div>
