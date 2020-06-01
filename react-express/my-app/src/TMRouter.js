@@ -10,6 +10,8 @@ import SignUp from './SignUp';
 import ForgotPass from './ForgotPass'
 import MyCal from './MyCal'
 import InvalidPwd from './InvalidPwd'
+import About from './About'
+import Contact from './Contact'
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -36,6 +38,12 @@ export default function TMRouter() {
           </Route>
           <Route path="/InvalidPwd">
             <InvalidPwd/>
+          </Route>
+          <Route path="/About">
+            <About/>
+          </Route>
+          <Route path="/Contact">
+            <Contact/>
           </Route>
           <Route path="/">
             <SignIn/>
