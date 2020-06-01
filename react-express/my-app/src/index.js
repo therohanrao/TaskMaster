@@ -1,12 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 import SignIn from './SignIn';
 import SignUp from './SignUp'
 import ForgotPass from './ForgotPass'
-//import {Alert} from 'react-alert'
 import TMRouter from './TMRouter'
 
 ReactDOM.render(<TMRouter/>, document.getElementById('root'));
