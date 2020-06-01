@@ -51,14 +51,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function myFunction(){
-    fetch("./create-account.html")
-}
-
-function attemptLogin(){
-    var form = document.getElementByID("name-form");
-    console.log(form.username, form.password);
-}
 class SignIn extends React.Component {
 
   constructor(props) {
