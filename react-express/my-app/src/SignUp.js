@@ -14,7 +14,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Logo from './TMLogo';
 import LogoBackground from './JR_logo.png';
-
+import NavBar from './NavBar';
 
 function Copyright() {
   return (
@@ -72,6 +72,8 @@ class SignUp extends React.Component {
 
   render() {
     return (
+      <div>
+        <NavBar/>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={useStyles.paper}>
@@ -167,6 +169,7 @@ class SignUp extends React.Component {
         </Box>
         <br></br>
       </Container>
+      </div>
     );
   }
 }

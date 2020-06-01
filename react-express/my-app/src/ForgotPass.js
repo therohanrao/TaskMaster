@@ -15,7 +15,7 @@ import Container from '@material-ui/core/Container';
 import Logo from './TMLogo';
 import LogoBackground from './JR_logo.png';
 import {Alert} from 'reactstrap'
-
+import NavBar from './NavBar'
 
 function Copyright() {
   return (
@@ -201,17 +201,14 @@ class ForgotPass extends React.Component {
 
   render() {
     return (
+      <div>
+        <NavBar/>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={useStyles.paper}>
           <Typography align='center'> 
           <p className="App-intro"> {this.state.apiResponse}</p>
             <Logo/>
-
-            <Alert color="primary">
-            This is a danger alert—check it out!
-            </Alert>
-
           </Typography>
           <Typography component="h1" variant="h5" align='center'>
             Enter Username to get Password: 
@@ -227,6 +224,7 @@ class ForgotPass extends React.Component {
         </Box>
         <br></br>
       </Container>
+      </div>
     );
   }
 }
