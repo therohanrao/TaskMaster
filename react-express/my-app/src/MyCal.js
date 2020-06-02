@@ -36,7 +36,7 @@ const Example = (props) => {
               <NavLink href="/Contact">Contact</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="http://localhost:8000">GitHub</NavLink>
+              <NavLink href="https://github.com/jrbronkar/TaskMaster">GitHub</NavLink>
             </NavItem>
             {/*<UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>

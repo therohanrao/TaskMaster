@@ -86,7 +86,7 @@ class InvalidPwd extends React.Component {
           </Typography>
           <Typography component="h1" variant="h5" align='center'>
             <Alert color="danger" dismi>
-            Invalid Information, Try Again
+            Invalid information, try again
             </Alert>
             Sign In
           </Typography>
