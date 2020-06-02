@@ -16,6 +16,8 @@ import {
   DropdownItem,
   NavbarText
 } from 'reactstrap';
+import Image from 'react-bootstrap/Image'
+
 
 const Example = (props) => {
   const [isOpen, setIsOpen] = useState(false);

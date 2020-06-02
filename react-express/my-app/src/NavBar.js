@@ -35,7 +35,7 @@ const NavBar = (props) => {
             <NavItem>
               <NavLink href="https://github.com/jrbronkar/TaskMaster">GitHub</NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
+            {/*<UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Options
               </DropdownToggle>
@@ -51,9 +51,9 @@ const NavBar = (props) => {
                   Reset
                 </DropdownItem>
               </DropdownMenu>
-            </UncontrolledDropdown>
+            </UncontrolledDropdown>*/}
           </Nav>
-          <NavbarText>Simple Text</NavbarText>
+          <NavbarText>Thank you for using TaskMaster!</NavbarText>
         </Collapse>
       </Navbar>
     </div>
