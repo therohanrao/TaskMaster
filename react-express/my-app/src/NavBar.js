@@ -22,13 +22,16 @@ const NavBar = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <NavbarBrand href="/SignIn">TaskMaster</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem>
+          <NavItem>
+              <NavLink href="/About">About</NavLink>
+          </NavItem>
+          <NavItem>
+              <NavLink href="/Contact">Contact</NavLink>
+          </NavItem>
             <NavItem>
               <NavLink href="https://github.com/jrbronkar/TaskMaster">GitHub</NavLink>
             </NavItem>

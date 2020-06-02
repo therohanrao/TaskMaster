@@ -16,13 +16,14 @@ import Logo from './TMLogo';
 import LogoBackground from './JR_logo.png';
 import {Link as RouterLink} from "react-router-dom";
 import { UncontrolledAlert as Alert} from 'reactstrap';
+import NavBar from './NavBar'
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        TaskMaster
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -74,6 +75,8 @@ class InvalidPwd extends React.Component {
 
   render() {
     return (
+      <div>
+        <NavBar/>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={useStyles.paper}>
@@ -141,6 +144,7 @@ class InvalidPwd extends React.Component {
           <Copyright />
         </Box>
       </Container>
+      </div>
     );
   }
 }
