@@ -1,9 +1,79 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
+<<<<<<< HEAD
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import {Link as RouterLink} from "react-router-dom";
+=======
+import 'bootstrap/dist/css/bootstrap.css';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText
+} from 'reactstrap';
+import Image from 'react-bootstrap/Image'
+
+
+const Example = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
+
+  return (
+    <div>
+      <Navbar color="light" light expand="md">
+        <NavbarBrand href="/MyCal">TaskMaster</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="mr-auto" navbar>
+            <NavItem>
+              <NavLink href="/About">About</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/Contact">Contact</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="https://github.com/jrbronkar/TaskMaster">GitHub</NavLink>
+            </NavItem>
+            {/*<UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+                Options
+              </DropdownToggle>
+              <DropdownMenu right>
+                <DropdownItem>
+                  Option 1
+                </DropdownItem>
+                <DropdownItem>
+                  Option 2
+                </DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem>
+                  Reset
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown> */}
+          </Nav>
+          <Nav>
+            <NavItem>
+              <NavLink href="http://localhost:3000">Log Out</NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
+    </div>
+  );
+}
+>>>>>>> 0e7008c9794eb78d807a7c86b99df0325cafa7b8
 
 class MyCal extends Component {
   state = {
@@ -23,6 +93,8 @@ class MyCal extends Component {
             height: '70vh'
         }}
       >
+
+
         <Calendar
           onChange={this.onChange}
           value={this.state.date}
@@ -48,6 +120,20 @@ class MyCal extends Component {
 }
 function findTask(date){
 
+<<<<<<< HEAD
 
 }
 export default MyCal;
+=======
+function NavCal() {
+  return(
+    <div>
+      <Example/>
+        <MyCal/>
+    </div>
+
+  );
+}
+
+export default NavCal
+>>>>>>> 0e7008c9794eb78d807a7c86b99df0325cafa7b8

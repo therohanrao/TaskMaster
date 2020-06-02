@@ -15,7 +15,7 @@ import Container from '@material-ui/core/Container';
 import Logo from './TMLogo';
 import LogoBackground from './JR_logo.png';
 import {Link as RouterLink} from "react-router-dom";
-
+import NavBar from "./NavBar"
 
 function Copyright() {
   return (
@@ -51,14 +51,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function myFunction(){
-    fetch("./create-account.html")
-}
-
-function attemptLogin(){
-    var form = document.getElementByID("name-form");
-    console.log(form.username, form.password);
-}
 class SignIn extends React.Component {
 
   constructor(props) {
@@ -81,6 +73,8 @@ class SignIn extends React.Component {
 
   render() {
     return (
+      <div>
+      <NavBar/>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={useStyles.paper}>
@@ -145,6 +139,7 @@ class SignIn extends React.Component {
           <Copyright />
         </Box>
       </Container>
+      </div>
     );
   }
 }

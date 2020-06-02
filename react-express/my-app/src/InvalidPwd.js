@@ -14,14 +14,16 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Logo from './TMLogo';
 import LogoBackground from './JR_logo.png';
-import NavBar from './NavBar';
+import {Link as RouterLink} from "react-router-dom";
+import { UncontrolledAlert as Alert} from 'reactstrap';
+import NavBar from './NavBar'
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        TaskMaster
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -50,11 +52,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-class SignUp extends React.Component {
+class InvalidPwd extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = { apiResponse: "API not working" };
+    this.render(props.go);
   }
   
   callAPI() {
@@ -63,12 +66,12 @@ class SignUp extends React.Component {
         .then(res => this.setState({ apiResponse: res }));
   }
   
-  componentWillMount() {
+  componentDidMount() {
     this.callAPI();
   }
 
   //API STUFF ^^
-  //Sign up page STUFF vv
+  //Sign in page STUFF vv
 
   render() {
     return (
@@ -79,13 +82,16 @@ class SignUp extends React.Component {
         <div className={useStyles.paper}>
           <Typography align='center'> 
           <p className="App-intro"> {this.state.apiResponse}</p>
-            <Logo/>
+            <Logo/> 
           </Typography>
           <Typography component="h1" variant="h5" align='center'>
-            Sign Up
+            <Alert color="danger" dismi>
+            Invalid information, try again
+            </Alert>
+            Sign In
           </Typography>
-      <form id="name-form" action="http://localhost:8000/signup" method="POST" className={useStyles.form} noValidate>
-      <TextField
+      <form id="name-form" action="http://localhost:8000/login" method="POST" className={useStyles.form} noValidate>
+            <TextField
               variant="outlined"
               margin="normal"
               required
@@ -107,52 +113,10 @@ class SignUp extends React.Component {
               id="password"
               autoComplete="current-password"
             />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="password2"
-              label="Confirm Password"
-              type="password"
-              id="password2"
-              autoComplete="current-password"
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
             />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="email"
-              label="Email"
-              id="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="securityquestion"
-              label="Security Question"
-              id="securityquestion"
-              autoComplete="security-question"
-              autoFocus
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="securityanswer"
-              label="Security Answer"
-              id="securityanswer"
-              autoComplete="security-answer"
-              autoFocus
-            />
-            <br></br>
-            <br></br>
             <Button
               type="submit"
               fullWidth
@@ -160,18 +124,29 @@ class SignUp extends React.Component {
               color="primary"
               className={useStyles.submit}
             >
-              Create Account
+              Sign In
             </Button>
+            <Grid container>
+              <Grid item xs>
+                  <RouterLink to="/ForgotPass">
+                    Forgot your password?
+                  </RouterLink>
+              </Grid>
+              <Grid item >
+                  <RouterLink to="/SignUp">
+                    Don't have an account? Sign up!
+                  </RouterLink>
+              </Grid>
+            </Grid>
           </form>
         </div>
         <Box mt={8}>
           <Copyright />
         </Box>
-        <br></br>
       </Container>
       </div>
     );
   }
 }
 
-export default SignUp;
+export default InvalidPwd;

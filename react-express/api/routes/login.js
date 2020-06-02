@@ -29,7 +29,8 @@ router.post('/', function(request, response) {
 				   response.redirect('http://localhost:3000/MyCal');
 			   } else {
 			       console.log('Invalid credentials.');
-			       response.redirect('/invalidpwd');
+			       //response.redirect('/invalidpwd');
+			       response.redirect('http://localhost:3000/InvalidPwd');
 			   }
 		       });
     });

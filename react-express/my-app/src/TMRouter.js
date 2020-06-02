@@ -9,7 +9,9 @@ import SignIn from './SignIn';
 import SignUp from './SignUp';
 import ForgotPass from './ForgotPass'
 import MyCal from './MyCal'
-
+import InvalidPwd from './InvalidPwd'
+import About from './About'
+import Contact from './Contact'
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -20,7 +22,7 @@ import MyCal from './MyCal'
 // making sure things like the back button and bookmarks
 // work properly.
 
-export default function BasicExample() {
+export default function TMRouter() {
   return (
     <Router>
       <div>
@@ -33,6 +35,15 @@ export default function BasicExample() {
           </Route>
           <Route path="/MyCal">
             <MyCal/>
+          </Route>
+          <Route path="/InvalidPwd">
+            <InvalidPwd/>
+          </Route>
+          <Route path="/About">
+            <About/>
+          </Route>
+          <Route path="/Contact">
+            <Contact/>
           </Route>
           <Route path="/">
             <SignIn/>
