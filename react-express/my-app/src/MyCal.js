@@ -1,9 +1,6 @@
 import React, { Component, useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
-import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
-import {Link as RouterLink} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
 import {
   Collapse,
@@ -19,8 +16,14 @@ import {
   DropdownItem,
   NavbarText
 } from 'reactstrap';
-import Image from 'react-bootstrap/Image'
-
+import Accordion from 'react-bootstrap/Accordion'
+import Card from 'react-bootstrap/Card'
+import AddTask from './AddTask'
+import SearchTask from './SearchTask'
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
+import Copyright from './Copyright'
 
 const Example = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -78,10 +81,9 @@ class MyCal extends Component {
   }
  
   onChange = date => this.setState({ date })
-  onClickDay = date => findTask( date);
+ 
   render() {
     return (
-      <p>
       <div
         style={{
             display: "flex",
@@ -94,23 +96,8 @@ class MyCal extends Component {
           onChange={this.onChange}
           value={this.state.date}
         />
-       </div>
-      <center><p>
-      <Grid container>
-              <Grid item xs>
-                  <RouterLink to="./AddTask">
-                    AddTask
-                  </RouterLink>
-              </Grid>
-              <Grid item >
-                  <RouterLink to="/findTask">
-                    FindTask
-                  </RouterLink>                                                                                                                
-              </Grid>                                                                                                                          
-            </Grid>
-      </p></center>
-      </p>
-   );
+      </div>
+    );
   }
 }
 function findTask(date){
@@ -119,7 +106,12 @@ function NavCal() {
   return(
     <div>
       <Example/>
-        <MyCal/>
+      <Typography align='left'>
+        <AddTask/>
+        <SearchTask/>
+      </Typography>
+      <MyCal/>
+      <Copyright/>
     </div>
 
   );

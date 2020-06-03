@@ -17,19 +17,7 @@ import LogoBackground from './JR_logo.png';
 import {Link as RouterLink} from "react-router-dom";
 import { UncontrolledAlert as Alert} from 'reactstrap';
 import NavBar from './NavBar'
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        TaskMaster
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import Copyright from './Copyright'
 
 const useStyles = makeStyles((theme) => ({
   paper: {

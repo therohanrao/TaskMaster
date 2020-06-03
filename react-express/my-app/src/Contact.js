@@ -10,19 +10,7 @@ import Container from '@material-ui/core/Container';
 import Logo from './TMLogo';
 import {Link as RouterLink} from "react-router-dom";
 import NavBar from "./NavBar"
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import Copyright from './Copyright'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
