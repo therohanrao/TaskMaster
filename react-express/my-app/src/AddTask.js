@@ -13,36 +13,30 @@ function DatePickers() {
     const classes = useStyles();
     
         return (
-          <Grid container justify="space-around">
-           <form className={classes.container} noValidate>
-          <TextField
-            id="startdate"
-            label="Start Date"
-            type="date"
-            fullWidth
-            defaultValue="2020-06-01"
-            className={classes.textField}
-            InputLabelProps={{
-                shrink: true,
-            }}
-          />
-           <TextField
-            id="enddate"
-            label="End Date"
-            type="date"
-            fullWidth
-            defaultValue="2020-06-01"
-           className={classes.textField}
-           InputLabelProps={{
-               shrink: true,
-           }}
-          />
-    
-        </form>
-        </Grid>  
+		<form className={classes.container} noValidate>
+		<TextField
+		id="startdate"
+		label="Start Date, Time"
+		type="datetime-local"
+		defaultValue="2020-06-02T10:30"
+		className={classes.textField}
+		InputLabelProps={{
+			shrink: true,
+		    }}
+                />
+		<TextField
+                id="enddate"
+                label="End Date, Time"
+                type="datetime-local"
+                defaultValue="2020-06-02T10:30"
+                className={classes.textField}
+                InputLabelProps={{
+                        shrink: true,
+                    }}
+                />
+	       </form>
             );
     }
-
 const useStyles = makeStyles((theme) => ({
     paper: {
       marginTop: theme.spacing(8),
@@ -53,6 +47,15 @@ const useStyles = makeStyles((theme) => ({
     form: {
       width: '100%', // Fix IE 11 issue.
       marginTop: theme.spacing(1),
+    },
+    textField: {
+		marginLeft: theme.spacing(1),
+		marginRight: theme.spacing(1),
+		width: 200,
+    },
+    container: {
+		display: 'flex',
+		flexWrap: 'wrap',
     },
     submit: {
       margin: theme.spacing(3, 0, 2),
@@ -100,6 +103,7 @@ return(
               type="submit"
               fullWidth
               variant="contained"
+
               color="primary"
               className={useStyles.submit}
             >
