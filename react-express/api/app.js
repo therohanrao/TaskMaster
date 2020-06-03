@@ -14,6 +14,7 @@ var invalidpwd = require('./routes/invalidpwd');
 var signUpRouter = require('./routes/signup');
 var calendarRouter = require('./routes/calendar');
 var addTaskRouter = require('./routes/addTask');
+var findTaskRouter = require('./routes/findTask');
 var app = express();
 app.use(session({secret: 'secretkey', saveUninitialized: true, resave: true, cookie: {maxAge: 60000}}));
 
@@ -36,6 +37,7 @@ app.use('/testAPI', testAPIRouter);
 app.use('/calendar', calendarRouter);
 app.use('/signup', signUpRouter);
 app.use('/addTask', addTaskRouter);
+app.use('/findTask', findTaskRouter);
 // catch 404 and forward to error handler
 //app.use(function(req, res, next) {
 //  next(createError(404));
