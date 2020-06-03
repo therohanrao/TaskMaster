@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 import SignIn from './SignIn';
-import SignUp from './SignUp'
-import ForgotPass from './ForgotPass'
+import SignUp from './SignUp';
+import ForgotPass from './ForgotPass';
+import AddTask from './AddTask';
 //import {Alert} from 'react-alert'
 import TMRouter from './TMRouter'
 

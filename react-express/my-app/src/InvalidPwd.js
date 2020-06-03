@@ -15,19 +15,9 @@ import Container from '@material-ui/core/Container';
 import Logo from './TMLogo';
 import LogoBackground from './JR_logo.png';
 import {Link as RouterLink} from "react-router-dom";
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import { UncontrolledAlert as Alert} from 'reactstrap';
+import NavBar from './NavBar'
+import Copyright from './Copyright'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -73,6 +63,8 @@ class InvalidPwd extends React.Component {
 
   render() {
     return (
+      <div>
+        <NavBar/>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={useStyles.paper}>
@@ -80,8 +72,11 @@ class InvalidPwd extends React.Component {
           <p className="App-intro"> {this.state.apiResponse}</p>
             <Logo/> 
           </Typography>
-          <Typography component="h1" variant="h5" align='center' color='error'>
-            Invalid Information, Try Again
+          <Typography component="h1" variant="h5" align='center'>
+            <Alert color="danger" dismi>
+            Invalid information, try again
+            </Alert>
+            Sign In
           </Typography>
       <form id="name-form" action="http://localhost:8000/login" method="POST" className={useStyles.form} noValidate>
             <TextField
@@ -137,6 +132,7 @@ class InvalidPwd extends React.Component {
           <Copyright />
         </Box>
       </Container>
+      </div>
     );
   }
 }

@@ -14,20 +14,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Logo from './TMLogo';
 import LogoBackground from './JR_logo.png';
-
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import NavBar from './NavBar';
+import Copyright from './Copyright'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -72,6 +60,8 @@ class SignUp extends React.Component {
 
   render() {
     return (
+      <div>
+        <NavBar/>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={useStyles.paper}>
@@ -167,6 +157,7 @@ class SignUp extends React.Component {
         </Box>
         <br></br>
       </Container>
+      </div>
     );
   }
 }
