@@ -19,8 +19,8 @@ router.post('/', function(request, response) {
 	var de2 = request.body.Description;
 	var start = request.body.startdate;
 	var end = request.body.enddate;
-	console.log(start.value);
-	console.log(end.value);
+	console.log(start);
+	console.log(end);
 	    dbConfig.query("INSERT INTO tasks (author, description,startdate, deadline) VALUES (?, ?,?,?);", [na2, de2,start,end], (err, rows, fields)=>{
 			    if(!err) {
 				console.log(rows);
