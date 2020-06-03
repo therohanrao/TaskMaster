@@ -195,7 +195,6 @@ class ForgotPass extends React.Component {
         <CssBaseline />
         <div className={useStyles.paper}>
           <Typography align='center'> 
-          <p className="App-intro"> {this.state.apiResponse}</p>
             <Logo/>
           </Typography>
           <Typography component="h1" variant="h5" align='center'>
@@ -208,6 +207,7 @@ class ForgotPass extends React.Component {
         </form>
         </div>
         <Box mt={8}>
+        <p className="App-intro" align="center"> {this.state.apiResponse}</p>
           <Copyright />
         </Box>
         <br></br>

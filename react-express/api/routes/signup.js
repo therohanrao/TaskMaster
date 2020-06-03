@@ -16,7 +16,6 @@ dbConfig.connect((err) => {
 	}
     });
 
-
 router.get('/', function(req, res, next) {
 	res.send('signuppage');
     });
