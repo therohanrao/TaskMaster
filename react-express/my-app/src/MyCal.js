@@ -1,11 +1,9 @@
 import React, { Component, useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
-<<<<<<< HEAD
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import {Link as RouterLink} from "react-router-dom";
-=======
 import 'bootstrap/dist/css/bootstrap.css';
 import {
   Collapse,
@@ -73,7 +71,6 @@ const Example = (props) => {
     </div>
   );
 }
->>>>>>> 0e7008c9794eb78d807a7c86b99df0325cafa7b8
 
 class MyCal extends Component {
   state = {
@@ -93,8 +90,6 @@ class MyCal extends Component {
             height: '70vh'
         }}
       >
-
-
         <Calendar
           onChange={this.onChange}
           value={this.state.date}
@@ -119,12 +114,7 @@ class MyCal extends Component {
   }
 }
 function findTask(date){
-
-<<<<<<< HEAD
-
 }
-export default MyCal;
-=======
 function NavCal() {
   return(
     <div>
@@ -136,4 +126,3 @@ function NavCal() {
 }
 
 export default NavCal
->>>>>>> 0e7008c9794eb78d807a7c86b99df0325cafa7b8

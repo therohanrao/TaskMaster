@@ -12,6 +12,7 @@ import MyCal from './MyCal'
 import InvalidPwd from './InvalidPwd'
 import About from './About'
 import Contact from './Contact'
+import AddTask from './AddTask'
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -44,6 +45,9 @@ export default function TMRouter() {
           </Route>
           <Route path="/Contact">
             <Contact/>
+          </Route>
+          <Route path="/AddTask">
+            <AddTask/>
           </Route>
           <Route path="/">
             <SignIn/>
