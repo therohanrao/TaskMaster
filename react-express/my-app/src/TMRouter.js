@@ -13,6 +13,7 @@ import InvalidPwd from './InvalidPwd'
 import About from './About'
 import Contact from './Contact'
 import AddTask from './AddTask'
+import InvalidSignUp from './InvalidSignUp';
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -48,6 +49,9 @@ export default function TMRouter() {
           </Route>
           <Route path="/AddTask">
             <AddTask/>
+          </Route> 
+          <Route path="/InvalidSignUp">
+            <InvalidSignUp/>
           </Route>
           <Route path="/">
             <SignIn/>
