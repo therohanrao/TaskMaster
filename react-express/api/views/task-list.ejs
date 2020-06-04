@@ -1,4 +1,35 @@
-<html><body>
+<html>
+<body>
+<meta charset="UTF-8">
+<title>Super Awesome</title>
+
+<!-- CSS (load bootstrap from a CDN) -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<style>
+    body    { padding-top:50px; }
+</style>
+
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+	  TaskMaster
+         </a>
+
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </div>
+
+</div>
+</nav>
+<main>
+<div class ="row">
+</center>
+  <div class="col-sm-8">
+  <div class="jumbotron">
 <table border="1" cellpadding="7" cellspacing="7">
   <tr>
     <th width="50px">No.</th>
@@ -29,4 +60,30 @@
   </tr>
 <% } %>
 </table>
+</div>
+</div>
+</center>
+<div class="col-sm-4">
+<div class="well">
+<h3><%="Delete Task & Archive" %></h3>
+    <form name="form1" method="POST" action="http:localhost:8000/deleteTask">
+    <table>
+        <tr>
+        <td>Name of Task</td>
+        <td><input type="text" name="taskname" ></td>
+        </tr>
+        <tr>
+        <td>Completion Note</td>
+        <td><input type="text" name="complete" ></td>
+        </tr>
+        <tr>
+        <td colspan="2"><input type="submit" value="Save" ></td>
+        </tr>
+    </table>
+    </form>   
+</div>
+</div>
+</div>
+</main>
+<p><a href="http://localhost:3000/MyCal"> Back to Calendar</a></p>
 </body></html>
