@@ -1,0 +1,71 @@
+<html>
+<body>
+<meta charset="UTF-8">
+<title>Super Awesome</title>
+
+<!-- CSS (load bootstrap from a CDN) -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<style>
+    body    { padding-top:50px; }
+</style>
+
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+	  TaskMaster
+         </a>
+
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </div>
+
+</div>
+</nav>
+<main>
+<div class ="row">
+</center>
+  <div class="col-sm-8">
+  <div class="jumbotron">
+<table border="1" cellpadding="7" cellspacing="7">
+  <tr>
+    <th width="50px">No.</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Author</th>
+    <th>Contributor</th>
+    <th>Subtype</th>
+    <th>Subtask</th>
+    <th>Deadline</th>
+  </tr>
+  <% if(data.length){ 
+    for(var i = 0;i < data.length;i++) { %>
+  <tr>
+    <td><%=(i+1)%></td>
+    <td><%=data[i].name%></td>
+    <td><%=data[i].description%></td>
+    <td><%=data[i].author%></td>
+    <td><%=data[i].contributor%></td>
+    <td><%=data[i].subtype%></td>
+    <td><%=data[i].subtask%></td>
+    <td><%=data[i].deadline%></td>
+  </tr>
+  <% }
+  }else{ %>
+  <tr>
+    <td colspan="8">No current tasks.</td>
+  </tr>
+<% } %>
+</table>
+</div>
+</div>
+</center>
+
+</div>
+</div>
+</main>
+<p><a href="http://localhost:3000/MyCal"> Back to Calendar</a></p>
+</body></html>

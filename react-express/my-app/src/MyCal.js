@@ -46,6 +46,7 @@ const Example = (props) => {
             <NavItem>
               <NavLink href="https://github.com/jrbronkar/TaskMaster">GitHub</NavLink>
             </NavItem>
+            
             {/*<UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Options
@@ -111,6 +112,13 @@ function NavCal() {
         <SearchTask/>
       </Typography>
       <MyCal/>
+      <p>
+      <center>
+      <form method="GET" action="http://localhost:8000/archiveTask">
+        <input type="submit" value="View Archived Tasks"></input>
+      </form>
+      </center>
+      </p>
       <Copyright/>
     </div>
 
