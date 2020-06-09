@@ -25,6 +25,12 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Copyright from './Copyright'
 
+function alter(date){
+    var s = (date.getYear() + 1900) + "-" +
+	("0" + (date.getMonth() + 1)).slice(-2) + "-" +
+	("0" + date.getDate()).slice(-2);
+    return s;
+}
 const Example = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -78,13 +84,20 @@ const Example = (props) => {
 
 class MyCal extends Component {
   state = {
-    date: new Date(),
+      date : new Date(),
+      stringdate: ""
   }
- 
-  onChange = date => this.setState({ date })
- 
+      onChange = date => this.setState({ date : date,
+					 stringdate : alter(date) })
+      
+     
+
   render() {
     return (
+      <p>
+      <center>
+      <h6>Today's date is: {this.state.stringdate}</h6>
+      </center>
       <div
         style={{
             display: "flex",
@@ -93,11 +106,19 @@ class MyCal extends Component {
             height: '70vh'
         }}
       >
-        <Calendar
+     
+      <Calendar
           onChange={this.onChange}
           value={this.state.date}
         />
       </div>
+      <center>
+      <form method="POST" action="http://localhost:8000/getDate"> 
+           <input type="hidden" id="date" value={this.state.stringdate} name="date"></input> 
+           <input type ="submit" value="Check Tasks"></input> 
+      </form>
+      </center>
+      </p>
     );
   }
 }

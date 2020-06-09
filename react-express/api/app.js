@@ -17,6 +17,8 @@ var addTaskRouter = require('./routes/addTask');
 var findTaskRouter = require('./routes/findTask');
 var deleteTaskRouter = require('./routes/deleteTask');
 var archiveRouter = require('./routes/archiveTask');
+var dateRouter = require('./routes/getDate');
+
 var app = express();
 app.use(session({secret: 'secretkey', saveUninitialized: true, resave: true, cookie: {maxAge: 60000}}));
 
@@ -42,6 +44,7 @@ app.use('/addTask', addTaskRouter);
 app.use('/findTask', findTaskRouter);
 app.use('/deleteTask', deleteTaskRouter);
 app.use('/archiveTask', archiveRouter);
+app.use('/getDate', dateRouter);
 
 // catch 404 and forward to error handler
 //app.use(function(req, res, next) {
