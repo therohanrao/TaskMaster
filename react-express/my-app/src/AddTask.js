@@ -8,35 +8,18 @@ import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 
+let newDate = new Date();
+let date = newDate.getDate();
+let date2 = newDate.getDate() + 1;
+let month = newDate.getMonth() + 1;
+let year = newDate.getFullYear();
+let hours = newDate.getHours();
+let min = newDate.getMinutes();
+let seconds = newDate.getSeconds();
+let dateFormat = year + "-" + month + "-" + date;
+let dateFormat2 = year + "-" + month + "-" + date2;
+let timeFormat = hours + ":" + min + ":" + seconds;
 
-function DatePickers() {
-    const classes = useStyles();
-    
-        return (
-		<form className={classes.container} noValidate>
-		<TextField
-		id="startdate"
-		label="Start Date, Time"
-		type="datetime-local"
-		defaultValue="2020-06-02T10:30"
-		className={classes.textField}
-		InputLabelProps={{
-			shrink: true,
-		    }}
-                />
-		<TextField
-                id="enddate"
-                label="End Date, Time"
-                type="datetime-local"
-                defaultValue="2020-06-02T10:30"
-                className={classes.textField}
-                InputLabelProps={{
-                        shrink: true,
-                    }}
-                />
-	       </form>
-            );
-    }
 const useStyles = makeStyles((theme) => ({
     paper: {
       marginTop: theme.spacing(8),
@@ -95,9 +78,64 @@ return(
               autoComplete="Description"
               autoFocus
         />
+        <TextField
+              variant="outlined"
+              margin="dense"
+              fullWidth
+              name="Password"
+              label="Password"
+              id="Password"
+              autoComplete="Password Protection"
+              autoFocus
+        />
         <br></br>
         <br></br>
-        <DatePickers />  
+        <TextField
+                name="startdate"
+		id="startdate"
+		label="Start Date"
+		type="date"
+                defaultValue={dateFormat}
+		className={useStyles.textField}
+		InputLabelProps={{
+			shrink: true,
+		    }}
+        />
+	<TextField
+                name="enddate"
+                id="enddate"
+                label="End Date"
+                type="date"
+                defaultValue={dateFormat2}
+                className={useStyles.textField}
+                InputLabelProps={{
+                        shrink: true,
+                    }}
+        />
+	<br></br>
+        <br></br>
+        <TextField
+                name="starttime"
+		id="starttime"
+		label="Start Time"
+		type="time"
+                defaultValue={timeFormat}
+		className={useStyles.textField}
+		InputLabelProps={{
+			shrink: true,
+		    }}
+        />
+	<TextField
+                name="endtime"
+                id="endtime"
+                label="End Time"
+                type="time"
+                defaultValue={timeFormat}
+                className={useStyles.textField}
+                InputLabelProps={{
+                        shrink: true,
+                    }}
+        />
         <br></br>
         <Button
               type="submit"

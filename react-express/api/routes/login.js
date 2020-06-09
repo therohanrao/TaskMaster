@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const mysql = require('mysql');
+global.token = null;
 var dbConfig = mysql.createConnection({
 	host: '127.0.0.1',
 	user: 'root',
@@ -27,6 +28,7 @@ router.post('/', function(request, response) {
 			   if (rows.length > 0) {
 				   //response.redirect('/calendar');
 				   response.redirect('http://localhost:3000/MyCal');
+                                   global.token = un2;
 			   } else {
 			       console.log('Invalid credentials.');
 			       //response.redirect('/invalidpwd');

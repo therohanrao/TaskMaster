@@ -8,6 +8,7 @@ import {
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import ForgotPass from './ForgotPass'
+import SignUpExp from './SignUpExp'
 import MyCal from './MyCal'
 import InvalidPwd from './InvalidPwd'
 import About from './About'
@@ -31,6 +32,9 @@ export default function TMRouter() {
       <Switch>
           <Route path="/SignUp">
             <SignUp/>
+          </Route>
+          <Route path="/SignUpExp">
+            <SignUpExp/>
           </Route>
           <Route path="/ForgotPass">
             <ForgotPass/>
