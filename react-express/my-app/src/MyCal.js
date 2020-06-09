@@ -85,7 +85,7 @@ const Example = (props) => {
 class MyCal extends Component {
   state = {
       date : new Date(),
-      stringdate: ""
+      stringdate: alter(new Date())
   }
       onChange = date => this.setState({ date : date,
 					 stringdate : alter(date) })
