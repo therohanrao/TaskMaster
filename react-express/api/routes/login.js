@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const mysql = require('mysql');
-global.token = null;
+
 var dbConfig = mysql.createConnection({
 	host: '127.0.0.1',
 	user: 'root',
@@ -17,23 +17,26 @@ dbConfig.connect((err) => {
 	}
     });
 
-
-router.get('/', function(req, res, next) {
-	res.send('loginpage');
-    });
 router.post('/', function(request, response) {
 	var un2 = request.body.username;
 	var pwd2 = request.body.password;
+        var redirected = 0;
 	dbConfig.query("SELECT * FROM users WHERE un = ? AND pw = ?", [un2, pwd2], (err, rows, fields)=>{
 			   if (rows.length > 0) {
-				   //response.redirect('/calendar');
-				   response.redirect('http://localhost:3000/MyCal');
-                                   global.token = un2;
+				//response.redirect('/calendar');
+                                console.log(global.token);
+                                global.token = un2;
+				redirected = 1;
 			   } else {
 			       console.log('Invalid credentials.');
 			       //response.redirect('/invalidpwd');
-			       response.redirect('http://localhost:3000/InvalidPwd');
 			   }
+                           if (redirected == 0) {
+				response.redirect('http://localhost:3000/InvalidPwd');
+                           } else {
+				console.log(global.token);
+				response.redirect('http://localhost:3000/MyCal');
+                           }
 		       });
     });
 

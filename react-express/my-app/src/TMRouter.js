@@ -14,6 +14,7 @@ import InvalidPwd from './InvalidPwd'
 import About from './About'
 import Contact from './Contact'
 import AddTask from './AddTask'
+import ContributeTask from './ContributeTask'
 import InvalidSignUp from './InvalidSignUp';
 
 // This site has 3 pages, all of which are rendered
@@ -54,6 +55,9 @@ export default function TMRouter() {
           <Route path="/AddTask">
             <AddTask/>
           </Route> 
+	  <Route path="/ContributeTask">
+            <ContributeTask/>
+	  </Route>
           <Route path="/InvalidSignUp">
             <InvalidSignUp/>
           </Route>

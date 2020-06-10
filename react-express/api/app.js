@@ -15,6 +15,7 @@ var signUpRouter = require('./routes/signup');
 var calendarRouter = require('./routes/calendar');
 var addTaskRouter = require('./routes/addTask');
 var findTaskRouter = require('./routes/findTask');
+var contributeTaskRouter = require('./routes/contributeTask');
 var deleteTaskRouter = require('./routes/deleteTask');
 var archiveRouter = require('./routes/archiveTask');
 var app = express();
@@ -40,6 +41,7 @@ app.use('/calendar', calendarRouter);
 app.use('/signup', signUpRouter);
 app.use('/addTask', addTaskRouter);
 app.use('/findTask', findTaskRouter);
+app.use('/contributeTask', contributeTaskRouter);
 app.use('/deleteTask', deleteTaskRouter);
 app.use('/archiveTask', archiveRouter);
 
