@@ -20,10 +20,12 @@ import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 import AddTask from './AddTask'
 import SearchTask from './SearchTask'
+import ContributeTask from './ContributeTask'
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Copyright from './Copyright'
+import { Redirect } from "react-router-dom";
 
 function alter(date){
     var s = (date.getYear() + 1900) + "-" +
@@ -64,6 +66,9 @@ const Example = (props) => {
                 <DropdownItem>
                   Option 2
                 </DropdownItem>
+                <DropdownItem>
+		  Option 3
+                </DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>
                   Reset
@@ -73,7 +78,7 @@ const Example = (props) => {
           </Nav>
           <Nav>
             <NavItem>
-              <NavLink href="http://localhost:3000">Log Out</NavLink>
+              <NavLink href="http://localhost:8000/logout">Log Out</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
@@ -132,6 +137,7 @@ function NavCal() {
       <Typography align='left'>
         <AddTask/>
         <SearchTask/>
+        <ContributeTask/>
       </Typography>
       <MyCal/>
       <p>
