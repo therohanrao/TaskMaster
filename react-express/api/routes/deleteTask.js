@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var nodemailer = require('nodemailer');
 const mysql = require('mysql');
 
+var senders = [];
 
 var dbConfig = mysql.createConnection({
         host: '127.0.0.1',
@@ -11,6 +13,20 @@ var dbConfig = mysql.createConnection({
         port: '3308'
     });
 
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'taskmaster2020v1@gmail.com',
+    pass: 'taskmaster1*'
+  }
+});
+
+var mailOptions = {
+  from: 'taskmaster2020v1@gmail.com',
+  to: senders,
+  subject: 'Commit Logged',
+  text: 'Thank you for contributing!'
+};
 
 router.post('/', function(request, response) {
     var idno = request.body.id;
@@ -33,6 +49,15 @@ router.post('/', function(request, response) {
             }
             dbConfig.query("UPDATE tasks SET completed=?, cmsg=? WHERE taskid=?;", [1, commit, idno], (err, rows, fields)=>{
                 if (!err) {
+                    console.log(global.token2);
+                    senders.push(global.token2);
+                    transporter.sendMail(mailOptions, function(error, info){
+  			if (error) {
+    			    console.log(error);
+  			} else {
+    			    console.log('Email sent: ' + info.response);
+  			}
+		    }); 
                     response.render('task-list.ejs', {page_title:"Tasks", data:rows});
                 } else {
                     console.log(err);

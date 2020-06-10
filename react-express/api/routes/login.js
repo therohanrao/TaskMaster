@@ -30,6 +30,7 @@ router.post('/', function(request, response) {
 				//response.redirect('/calendar');
                                 console.log(global.token);
                                 global.token = un2;
+				global.token2 = rows[0].em;
 			        request.session.username = un2;
                                 console.log(global.token);
 				response.redirect('http://localhost:3000/MyCal');

@@ -4,6 +4,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   global.token = null;
+  global.token2 = null;
   console.log(global.token);
   res.redirect('http://localhost:3000/');
 });
