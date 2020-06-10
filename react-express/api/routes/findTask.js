@@ -18,7 +18,7 @@ var dbConfig = mysql.createConnection({
 
 router.post('/', function(request, response) {
 	var na2 = request.body.taskname;
-	var username = request.session.username;
+	var username = global.token;
         var id2 = request.body.taskID;
 	console.log(na2);
         if (na2 == "") {

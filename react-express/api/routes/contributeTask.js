@@ -46,6 +46,8 @@ function getToLeaf(idno, password) {
 router.post('/', function(request, response) {
     var idno = request.body.taskID;
     var password = request.body.password;
+    console.log(idno);
+    console.log(password);
     dbConfig.query("SELECT * FROM tasks WHERE taskid=? AND password=?;", [idno, password], (err, rows, fields)=>{
         if (rows.length > 0) {
             if (rows[0].contributor == null) {
@@ -61,7 +63,7 @@ router.post('/', function(request, response) {
                 return response.redirect('http://localhost:3000/MyCal');
             }
         } else {
-            console.log('No task identified.');
+            return response.redirect('http://localhost:3000/MyCalError');
         }
     });
 });

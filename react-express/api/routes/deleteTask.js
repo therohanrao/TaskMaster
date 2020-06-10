@@ -39,7 +39,7 @@ router.post('/', function(request, response) {
                 }
             });
         } else {
-            console.log('No task identified.');
+            response.redirect('http://localhost:3000/MyCalError2');
         }
     });
 });

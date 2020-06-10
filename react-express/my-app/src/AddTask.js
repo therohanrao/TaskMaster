@@ -16,9 +16,6 @@ let year = newDate.getFullYear();
 let hours = newDate.getHours();
 let min = newDate.getMinutes();
 let seconds = newDate.getSeconds();
-let dateFormat = year + "-" + month + "-" + date;
-let dateFormat2 = year + "-" + month + "-" + date2;
-let timeFormat = hours + ":" + min + ":" + seconds;
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -46,6 +43,16 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 function AddTask() {
+if (month < 10) {
+    month = "0" + month;
+} else if (date < 10) {
+    date = "0" + date;
+} else if (date2 < 10) {
+    date2 = "0" + date2;
+}
+let dateFormat = year + "-" + month + "-" + date;
+let dateFormat2 = year + "-" + month + "-" + date2;
+let timeFormat = hours + ":" + min + ":" + seconds;
 return(
     <Container component="main" maxWidth="xs">
 <Accordion>

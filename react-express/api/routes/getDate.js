@@ -14,11 +14,11 @@ var dbConfig = mysql.createConnection({
 
 router.post('/', function(request, response) {
         var test = request.body.date;
-	var un = request.session.username;
+	var un = global.token;
 	console.log(un);
 	console.log(test);
         
-        dbConfig.query("SELECT * FROM tasks WHERE CAST(deadline AS DATE)=? AND contributor=?;", [test,un], (err, rows, fields)=>{
+        dbConfig.query("SELECT * FROM tasks WHERE CAST(deadline AS DATE)=? AND (contributor=? OR author=?);", [test,un,un], (err, rows, fields)=>{
                 if(!err) {
                     response.render('task-list.ejs', {page_title:"Tasks", data:rows});
                 } else {

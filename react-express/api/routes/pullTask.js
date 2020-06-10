@@ -12,12 +12,14 @@ var dbConfig = mysql.createConnection({
     });
 
 
-router.get('/', function(request, response) {
-        dbConfig.query("SELECT * FROM tasks WHERE completed=1 AND contributor=?;", [global.token], (err, rows, fields)=>{
+router.post('/', function(request, response) {
+        var task = request.body.taskname;
+        console.log(task);
+        dbConfig.query("UPDATE tasks SET completed = ? WHERE taskid=?;", [0,task], (err, rows, fields)=>{
                 if(!err) {
-                    response.render('archive.ejs', {page_title:"Archived Tasks", data:rows});
+                    response.redirect("http://localhost:8000/archiveTask");
                 } else {
-                    console.log('No tasks archived.');
+                    console.log(err);
                 }
             });
     });

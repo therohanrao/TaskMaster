@@ -21,7 +21,7 @@ var archiveRouter = require('./routes/archiveTask');
 var dateRouter = require('./routes/getDate');
 var forgotRouter = require('./routes/forgotPass');
 var checkSARouter = require('./routes/checksa');
-
+var pullRouter = require('./routes/pullTask');
 
 var app = express();
 app.use(session({secret: 'secretkey', saveUninitialized: true, resave: true, cookie: {maxAge: 60000}}));
@@ -52,6 +52,7 @@ app.use('/archiveTask', archiveRouter);
 app.use('/getDate', dateRouter);
 app.use('/forgotPass', forgotRouter);
 app.use('/checksa', checkSARouter);
+app.use('/pullTask', pullRouter);
 
 // catch 404 and forward to error handler
 //app.use(function(req, res, next) {

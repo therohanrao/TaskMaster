@@ -16,6 +16,15 @@ dbConfig.connect((err) => {
 	}
     });
 
+function validateEmail(email) 
+{
+	if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+        {
+    	    return (true);
+        }
+        return (false);
+}
+
 router.get('/', function(req, res, next) {
 	res.send('signuppage');
     });
@@ -29,7 +38,9 @@ router.post('/', function(request, response) {
 	if(pwd != pwd2)
 	{
 	return response.redirect('http://localhost:3000/InvalidSignUp');
-	}
+	} else if(!validateEmail(em2)) {
+        return response.redirect('http://localhost:3000/InvalidSignUp2');
+        }
 	dbConfig.query("INSERT INTO users (em, agreement, sq, sa, un, pw) VALUES ( ?, '1', ?, ?, ?, ?);", [em2, sq2, sa2, un2, pwd2], (err, rows, fields)=>{
 		if(!err) {
 		    console.log(rows);

@@ -10,12 +10,15 @@ import SignUp from './SignUp';
 import ForgotPass from './ForgotPass'
 import SignUpExp from './SignUpExp'
 import MyCal from './MyCal'
+import MyCalError from './MyCalError'
+import MyCalError2 from './MyCalError2'
 import InvalidPwd from './InvalidPwd'
 import About from './About'
 import Contact from './Contact'
 import AddTask from './AddTask'
 import ContributeTask from './ContributeTask'
 import InvalidSignUp from './InvalidSignUp';
+import InvalidSignUp2 from './InvalidSignUp2';
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -43,6 +46,12 @@ export default function TMRouter() {
           <Route path="/MyCal">
             <MyCal/>
           </Route>
+          <Route path="/MyCalError">
+            <MyCalError/>
+          </Route>
+          <Route path="/MyCalError2">
+            <MyCalError2/>
+          </Route>
           <Route path="/InvalidPwd">
             <InvalidPwd/>
           </Route>
@@ -60,6 +69,9 @@ export default function TMRouter() {
 	  </Route>
           <Route path="/InvalidSignUp">
             <InvalidSignUp/>
+          </Route>
+	  <Route path="/InvalidSignUp2">
+            <InvalidSignUp2/>
           </Route>
           <Route path="/">
             <SignIn/>
