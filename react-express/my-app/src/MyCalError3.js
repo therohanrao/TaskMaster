@@ -107,7 +107,7 @@ class MyCal extends Component {
       <h6>Today's date is: {this.state.todaydate}</h6>
       <h6>Selected date is: {this.state.stringdate}</h6>
       <Alert color="danger">
-           No task identified. If the task requires a password, make sure to input one!
+           Please provide a name for the task.
       </Alert>
       </center>
       <div

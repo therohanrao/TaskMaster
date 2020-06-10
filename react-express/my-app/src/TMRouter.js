@@ -12,6 +12,8 @@ import SignUpExp from './SignUpExp'
 import MyCal from './MyCal'
 import MyCalError from './MyCalError'
 import MyCalError2 from './MyCalError2'
+import MyCalError3 from './MyCalError3'
+import MyCalError4 from './MyCalError4'
 import InvalidPwd from './InvalidPwd'
 import About from './About'
 import Contact from './Contact'
@@ -51,6 +53,12 @@ export default function TMRouter() {
           </Route>
           <Route path="/MyCalError2">
             <MyCalError2/>
+          </Route>
+	  <Route path="/MyCalError3">
+            <MyCalError3/>
+          </Route>
+          <Route path="/MyCalError4">
+            <MyCalError4/>
           </Route>
           <Route path="/InvalidPwd">
             <InvalidPwd/>

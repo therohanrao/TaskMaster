@@ -24,6 +24,11 @@ router.post('/', function(request, response) {
         }
 	var na2 = request.body.Name;
 	var de2 = request.body.Description;
+        if (na2 == '') {
+		return response.redirect('http://localhost:3000/MyCalError3');
+        } else if (de2 == '') {
+		return response.redirect('http://localhost:3000/MyCalError4');
+        }
         var pwd = request.body.Password;
         var startime = request.body.startdate + " " + request.body.starttime;
         var endtime = request.body.enddate + " " + request.body.endtime;
