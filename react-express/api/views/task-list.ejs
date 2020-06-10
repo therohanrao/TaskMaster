@@ -34,25 +34,30 @@
   <tr>
     <th width="50px">No.</th>
     <th>Name</th>
-    <th>Description</th>
-    <th>Author</th>
-    <th>Contributor</th>
-    <th>Subtype</th>
-    <th>Subtask</th>
-    <th>Deadline</th>
+    <th>StartDate</th>
+    <th>EndDate</th>
+    <th>Click for More Info</th>
   </tr>
   <% if(data.length){ 
     for(var i = 0;i < data.length;i++) { %>
   <tr>
     <td><%=data[i].taskid%></td>
     <td><%=data[i].name%></td>
-    <td><%=data[i].description%></td>
-    <td><%=data[i].author%></td>
-    <td><%=data[i].contributor%></td>
-    <td><%=data[i].subtype%></td>
-    <td><%=data[i].subtask%></td>
+    <td><%=data[i].startdate%></td>
     <td><%=data[i].deadline%></td>
+    
+    <td><button id="page2"> Get Info</button></td>
   </tr>
+    <script>
+      
+	var bt = document.getElementById("page2");
+        bt.addEventListener('click',function(){
+          alert("123")});
+      
+
+
+			 }
+    </script>
   <% }
   }else{ %>
   <tr>
