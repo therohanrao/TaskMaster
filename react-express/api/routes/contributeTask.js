@@ -19,7 +19,10 @@ function getToLeaf(idno, password) {
             var prevname = rows[0].name;
             var prevdescription = rows[0].description;
             var prevauthor = rows[0].author;
-            dbConfig.query("INSERT INTO tasks (name, description, author, contributor) VALUES (?, ?, ?, ?);", [prevname, prevdescription, prevauthor, global.token], (err, rows, fields)=>{
+            var prevp = rows[0].password;
+            var prevstart = rows[0].startdate;
+            var prevend = rows[0].deadline;
+            dbConfig.query("INSERT INTO tasks (name, description, author, contributor, password, startdate, deadline) VALUES (?, ?, ?, ?, ?, ?, ?);", [prevname, prevdescription, prevauthor, global.token, prevp, prevstart, prevend], (err, rows, fields)=>{
                 if (!err) {
                     console.log(rows.insertId);
                     var newid = rows.insertId;
