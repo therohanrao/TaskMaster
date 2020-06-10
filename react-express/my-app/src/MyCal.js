@@ -103,6 +103,7 @@ class MyCal extends Component {
       <p>
       <center>
       <h6>Today's date is: {this.state.todaydate}</h6>
+      <h6>Selected date is: {this.state.stringdate}</h6>
       </center>
       <div
         style={{
