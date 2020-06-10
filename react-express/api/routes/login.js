@@ -1,5 +1,10 @@
 var express = require('express');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+
+
 var router = express.Router();
+router.use(cookieParser());
 const mysql = require('mysql');
 
 var dbConfig = mysql.createConnection({
@@ -7,7 +12,7 @@ var dbConfig = mysql.createConnection({
 	user: 'root',
 	password: '',
 	database: 'users',
-	port: '3308'
+	port: '8889'
     });
 dbConfig.connect((err) => {
 	if (!err) {
@@ -20,23 +25,18 @@ dbConfig.connect((err) => {
 router.post('/', function(request, response) {
 	var un2 = request.body.username;
 	var pwd2 = request.body.password;
-        var redirected = 0;
 	dbConfig.query("SELECT * FROM users WHERE un = ? AND pw = ?", [un2, pwd2], (err, rows, fields)=>{
 			   if (rows.length > 0) {
-				//response.redirect('/calendar');
-                                console.log(global.token);
-                                global.token = un2;
-				redirected = 1;
+				   //response.redirect('/calendar');
+           global.token = un2;
+			     request.session.username = un2;
+			     console.log(request.session.username);
+				   response.redirect('http://localhost:3000/MyCal');
+                                   
 			   } else {
 			       console.log('Invalid credentials.');
 			       //response.redirect('/invalidpwd');
 			   }
-                           if (redirected == 0) {
-				response.redirect('http://localhost:3000/InvalidPwd');
-                           } else {
-				console.log(global.token);
-				response.redirect('http://localhost:3000/MyCal');
-                           }
 		       });
     });
 
