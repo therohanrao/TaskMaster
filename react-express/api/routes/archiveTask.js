@@ -8,12 +8,12 @@ var dbConfig = mysql.createConnection({
         user: 'root',
         password: '',
         database: 'tasks',
-        port: '8889'
+        port: '3308'
     });
 
 
 router.get('/', function(request, response) {
-        dbConfig.query("SELECT * FROM tasks WHERE completed=1;", (err, rows, fields)=>{
+        dbConfig.query("SELECT * FROM tasks WHERE completed=1 AND contributor=?;", [global.token], (err, rows, fields)=>{
                 if(!err) {
                     response.render('archive.ejs', {page_title:"Archived Tasks", data:rows});
                 } else {

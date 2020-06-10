@@ -43,9 +43,6 @@ function getToLeaf(idno) {
 router.post('/', function(request, response) {
     var idno = request.body.taskID;
     var password = request.body.password;
-    if (password == '') {
-        password = null;
-    }
     dbConfig.query("SELECT * FROM tasks WHERE taskid=? AND password=?;", [idno, password], (err, rows, fields)=>{
         if (rows.length > 0) {
             if (rows[0].contributor == null) {

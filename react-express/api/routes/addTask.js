@@ -12,7 +12,7 @@ var dbConfig = mysql.createConnection({
 	user: 'root',
 	password: '',
 	database: 'tasks',
-	port: '8889'
+	port: '3308'
     });
 
 router.get('/',function(req, res, next){

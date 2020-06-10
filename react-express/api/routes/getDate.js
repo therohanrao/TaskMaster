@@ -8,7 +8,7 @@ var dbConfig = mysql.createConnection({
         user: 'root',
         password: '',
         database: 'tasks',
-        port: '8889'
+        port: '3308'
     });
 
 
@@ -18,7 +18,7 @@ router.post('/', function(request, response) {
 	console.log(un);
 	console.log(test);
         
-        dbConfig.query("SELECT * FROM tasks WHERE CAST(startdate AS DATE)=? AND author=?;", [test,un], (err, rows, fields)=>{
+        dbConfig.query("SELECT * FROM tasks WHERE CAST(deadline AS DATE)=? AND contributor=?;", [test,un], (err, rows, fields)=>{
                 if(!err) {
                     response.render('task-list.ejs', {page_title:"Tasks", data:rows});
                 } else {

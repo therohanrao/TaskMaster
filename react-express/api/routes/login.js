@@ -12,7 +12,7 @@ var dbConfig = mysql.createConnection({
 	user: 'root',
 	password: '',
 	database: 'users',
-	port: '8889'
+	port: '3308'
     });
 dbConfig.connect((err) => {
 	if (!err) {
@@ -27,15 +27,15 @@ router.post('/', function(request, response) {
 	var pwd2 = request.body.password;
 	dbConfig.query("SELECT * FROM users WHERE un = ? AND pw = ?", [un2, pwd2], (err, rows, fields)=>{
 			   if (rows.length > 0) {
-				   //response.redirect('/calendar');
-           global.token = un2;
-			     request.session.username = un2;
-			     console.log(request.session.username);
-				   response.redirect('http://localhost:3000/MyCal');
+				//response.redirect('/calendar');
+                                global.token = un2;
+			        request.session.username = un2;
+			        console.log(request.session.username);
+				response.redirect('http://localhost:3000/MyCal');
                                    
 			   } else {
 			       console.log('Invalid credentials.');
-			       //response.redirect('/invalidpwd');
+			       response.redirect('http://localhost:3000/InvalidPwd');
 			   }
 		       });
     });

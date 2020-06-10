@@ -78,7 +78,7 @@ const Example = (props) => {
           </Nav>
           <Nav>
             <NavItem>
-              <NavLink href="http://localhost:8000/logout">Log Out</NavLink>
+              <NavLink href="/">Log Out</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
