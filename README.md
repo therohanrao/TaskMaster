@@ -132,7 +132,7 @@ make sure both the port numbers in the `"port": 3308` and `"port": 8889` lines m
 
 If any other errors persist, please contact us
 
-![Image](/img/TMcontact.jpg)
+![Image](/img/TMContact.jpg)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
