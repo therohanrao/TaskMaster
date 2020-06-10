@@ -28,9 +28,10 @@ router.post('/', function(request, response) {
 	dbConfig.query("SELECT * FROM users WHERE un = ? AND pw = ?", [un2, pwd2], (err, rows, fields)=>{
 			   if (rows.length > 0) {
 				//response.redirect('/calendar');
+                                console.log(global.token);
                                 global.token = un2;
 			        request.session.username = un2;
-			        console.log(request.session.username);
+                                console.log(global.token);
 				response.redirect('http://localhost:3000/MyCal');
                                    
 			   } else {

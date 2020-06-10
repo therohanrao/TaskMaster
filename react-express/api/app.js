@@ -9,6 +9,7 @@ var session = require('express-session')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
+var logoutRouter = require('./routes/logout');
 var testAPIRouter = require('./routes/testAPI');
 var invalidpwd = require('./routes/invalidpwd');
 var signUpRouter = require('./routes/signup');
@@ -39,6 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
+app.use('/logout', logoutRouter);
 app.use('/invalidpwd', invalidpwd);
 app.use('/users', usersRouter);
 app.use('/testAPI', testAPIRouter);

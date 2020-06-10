@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   global.token = null;
   console.log(global.token);
-  res.render('index', { title: 'Express' });
+  res.redirect('http://localhost:3000/');
 });
 
 module.exports = router;
