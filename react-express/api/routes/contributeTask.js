@@ -11,8 +11,8 @@ var dbConfig = mysql.createConnection({
 	port: '3308'
     });
 
-function getToLeaf(idno) {
-    dbConfig.query("SELECT * FROM tasks WHERE taskid=? AND author=?;", [idno, global.token], (err, rows, fields)=>{
+function getToLeaf(idno, password) {
+    dbConfig.query("SELECT * FROM tasks WHERE taskid=? AND password=?;", [idno, password], (err, rows, fields)=>{
         if (rows[0].subtask == null) {
             var previd = rows[0].taskid;
             var newid = null;
@@ -54,7 +54,7 @@ router.post('/', function(request, response) {
                     }
                 });                
             } else {
-                var dummy = getToLeaf(idno);
+                var dummy = getToLeaf(idno, password);
                 return response.redirect('http://localhost:3000/MyCal');
             }
         } else {
