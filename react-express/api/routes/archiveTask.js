@@ -13,6 +13,9 @@ var dbConfig = mysql.createConnection({
 
 
 router.get('/', function(request, response) {
+        if (global.token == null) {
+        	return response.redirect('http://localhost:3000/');
+        }
         dbConfig.query("SELECT * FROM tasks WHERE completed=1 AND contributor=?;", [global.token], (err, rows, fields)=>{
                 if(!err) {
                     response.render('archive.ejs', {page_title:"Archived Tasks", data:rows});

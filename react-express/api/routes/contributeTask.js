@@ -48,6 +48,9 @@ router.post('/', function(request, response) {
     var password = request.body.password;
     console.log(idno);
     console.log(password);
+    if (global.token == null) {
+        return response.redirect('http://localhost:3000/');
+    }
     dbConfig.query("SELECT * FROM tasks WHERE taskid=? AND password=?;", [idno, password], (err, rows, fields)=>{
         if (rows.length > 0) {
             if (rows[0].contributor == null) {

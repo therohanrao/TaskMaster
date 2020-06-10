@@ -21,6 +21,9 @@ router.post('/', function(request, response) {
 	var username = global.token;
         var id2 = request.body.taskID;
 	console.log(na2);
+        if (global.token == null) {
+            return response.redirect('http://localhost:3000/');
+        }
         if (na2 == "") {
             dbConfig.query("SELECT * FROM tasks WHERE taskid=? AND completed IS NULL;", [id2], (err, rows, fields)=>{
 		if(!err) {

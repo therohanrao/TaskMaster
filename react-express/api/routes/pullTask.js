@@ -15,7 +15,7 @@ var dbConfig = mysql.createConnection({
 router.post('/', function(request, response) {
         var task = request.body.taskname;
         console.log(task);
-        dbConfig.query("UPDATE tasks SET completed = ? WHERE taskid=?;", [0,task], (err, rows, fields)=>{
+        dbConfig.query("UPDATE tasks SET completed=NULL WHERE taskid=?;", [task], (err, rows, fields)=>{
                 if(!err) {
                     response.redirect("http://localhost:8000/archiveTask");
                 } else {

@@ -19,12 +19,15 @@ router.get('/',function(req, res, next){
 	res.redirect('http://localhost:3000/addTask');
     });
 router.post('/', function(request, response) {
+        if (global.token == null) {
+        	return response.redirect('http://localhost:3000/');
+        }
 	var na2 = request.body.Name;
 	var de2 = request.body.Description;
         var pwd = request.body.Password;
         var startime = request.body.startdate + " " + request.body.starttime;
         var endtime = request.body.enddate + " " + request.body.endtime;
-	var author = request.session.username;
+	var author = global.token;
 	console.log(author);
         console.log(startime);
         console.log(endtime);
