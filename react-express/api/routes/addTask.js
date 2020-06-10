@@ -1,5 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var session = require('express-session');
+var cookieParser = require('cookie-parser');
+
+router.use(cookieParser());
+
 const mysql = require('mysql');
 
 var dbConfig = mysql.createConnection({
@@ -7,7 +12,7 @@ var dbConfig = mysql.createConnection({
 	user: 'root',
 	password: '',
 	database: 'tasks',
-	port: '3308'
+	port: '8889'
     });
 
 router.get('/',function(req, res, next){
@@ -19,9 +24,11 @@ router.post('/', function(request, response) {
         var pwd = request.body.Password;
         var startime = request.body.startdate + " " + request.body.starttime;
         var endtime = request.body.enddate + " " + request.body.endtime;
+	var author = request.session.username;
+	console.log(author);
         console.log(startime);
         console.log(endtime);
-	dbConfig.query("INSERT INTO tasks (name, description, author, password, startdate, deadline) VALUES (?, ?,?,?,?,?);", [na2, de2, global.token, pwd, startime, endtime], (err, rows, fields)=>{
+	dbConfig.query("INSERT INTO tasks (name, description, author, password, startdate, deadline) VALUES (?, ?,?,?,?,?);", [na2, de2, author, pwd, startime, endtime], (err, rows, fields)=>{
 		if(!err) {
 			console.log(rows);
 		} else {

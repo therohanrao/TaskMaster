@@ -1,5 +1,10 @@
 var express = require('express');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+
+
 var router = express.Router();
+router.use(cookieParser());
 const mysql = require('mysql');
 global.token = null;
 var dbConfig = mysql.createConnection({
@@ -7,7 +12,7 @@ var dbConfig = mysql.createConnection({
 	user: 'root',
 	password: '',
 	database: 'users',
-	port: '3308'
+	port: '8889'
     });
 dbConfig.connect((err) => {
 	if (!err) {
@@ -27,6 +32,8 @@ router.post('/', function(request, response) {
 	dbConfig.query("SELECT * FROM users WHERE un = ? AND pw = ?", [un2, pwd2], (err, rows, fields)=>{
 			   if (rows.length > 0) {
 				   //response.redirect('/calendar');
+			       request.session.username = un2;
+			       console.log(request.session.username);
 				   response.redirect('http://localhost:3000/MyCal');
                                    global.token = un2;
 			   } else {
