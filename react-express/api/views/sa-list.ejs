@@ -1,0 +1,63 @@
+<html>
+<body>
+<meta charset="UTF-8">
+<title>Super Awesome</title>
+
+<!-- CSS (load bootstrap from a CDN) -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<style>
+    body    { padding-top:50px; }
+</style>
+
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+	  TaskMaster
+         </a>
+
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </div>
+
+</div>
+</nav>
+<center>
+<main>
+
+<center>
+   <% if(data.length){ %>
+   <center>
+
+  <div class="jumbotron">
+<h3>Enter Security Answer:</h3>
+<h4><%=data[0].sq%></h4>
+<h4><%=data[0].un%></h4>
+    <form name="form1" method="POST" action="/checksa">
+        <input type="text" name="testsa" ><br></br>
+	<input type="hidden" name="username" value=<%=data[0].un%>>
+        <input type="submit" value="Check Answer" >
+    </form>
+
+
+</div>
+</center>
+  <%
+  }else{ %>
+  
+    <h5>No users are associated with that username.</h5>
+  
+<% } %>
+</center>
+</table>
+
+</div>
+</center>
+</div>
+</main>
+<center>
+<p><a href="http://localhost:3000/ForgotPass"> Back to Forgot Password</a></p></center>
+</body></html>
