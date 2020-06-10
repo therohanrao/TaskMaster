@@ -85,7 +85,8 @@ const Example = (props) => {
 class MyCal extends Component {
   state = {
       date : new Date(),
-      stringdate: alter(new Date())
+      stringdate: alter(new Date()),
+      todaydate: alter(new Date())
   }
       onChange = date => this.setState({ date : date,
 					 stringdate : alter(date) })
@@ -96,7 +97,7 @@ class MyCal extends Component {
     return (
       <p>
       <center>
-      <h6>Today's date is: {this.state.stringdate}</h6>
+      <h6>Today's date is: {this.state.todaydate}</h6>
       </center>
       <div
         style={{
@@ -115,7 +116,7 @@ class MyCal extends Component {
       <center>
       <form method="POST" action="http://localhost:8000/getDate"> 
            <input type="hidden" id="date" value={this.state.stringdate} name="date"></input> 
-           <input type ="submit" value="Check Tasks"></input> 
+           <input type ="submit" value={"Get Tasks on " + this.state.stringdate}></input> 
       </form>
       </center>
       </p>
