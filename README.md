@@ -103,6 +103,10 @@ DB connection succeeded.
 
 **Welcome to TaskMaster!**
 
+# Demo
+
+[![Watch the video](https://img.youtube.com/vi/A7cm_KLtnC4/maxresdefault.jpg)](https://youtu.be/A7cm_KLtnC4)
+
 ## **Troubleshooting**:
 
 you might get an error like this:
