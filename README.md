@@ -5,9 +5,9 @@
 ## Table of Contents
 * [Description](#description)
 * [Installation](#Installation)
-  * [In my-app](#Inmy-app)
+  * [In my-app](#In-my-app)
   * [Database setup](#Database-setup)
-  * [In api:](#In-api)
+  * [In api](#In-api)
 - [Demo](#demo)
 - [Troubleshooting](#Troubleshooting)
 - [Mid-Quarter Demos](#Mid-Quarter-Demos)
