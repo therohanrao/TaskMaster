@@ -40,8 +40,6 @@
     - [MAMP](https://www.mamp.info/en/downloads/) (for Mac)
     - [phpMyAdmin](https://www.phpmyadmin.net/)
 
-
-
 #
 
 Open up two Command prompts
@@ -96,6 +94,14 @@ At this point, we can now exit this browser.
 Again, run npm start:
 ```bash
 npm start
+```
+
+If you run into any errors try installing these packages:
+
+```bash
+npm install express
+npm install mysql
+npm install ejs
 ```
 
 If your database is setup and the backend is connected properly, you will see this message outputted in the command prompt:
