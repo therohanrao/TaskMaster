@@ -16,24 +16,12 @@
 - [Contributing](#Contributing)
 
 ## Description
- CMD TaskMaster is a task and event-focused calendar application. 
-          
-It solves organizational challenges faced by the user(s) as either an individual or member of a community, company, or a group by providing an easy to use framework for events, project development, task distribution, and “to-do” lists with no specific deadline.
+TaskMaster is a calendar application that focuses on tasks and events. The goal of TaskMaster is to solve organizational challenges that are faced by individuals, groups, and companies that need to complete tasks in a timely manner. If the user so chooses, it may even be used as a to-do list with no specified deadline. We hope that, with our product, users will be able to set up events and use it for project development and task distribution with ease.
 
-Users will be able to create tasks and sub-tasks within time-windows/deadlines 
-or until the task is actively marked as complete. Group features will also be part 
-of this application as users will be able to and delegate tasks to other users 
-in the group, accept tasks from other users, and invite users to their group. 
-Critical to the app is the idea of nesting, particularly nested tasks and nested groups. 
-For example, this software project is a task that can be subdivided into many sub-tasks, 
-and the CS97 class is a group that is divided into subgroups. We hope to also include 
-location services (with respective permissions) by extending the application to local 
-events, where users could view public events around their area. Out of scope features 
-that this application will not implement in the time allotted will be a completely public     
-marketplace where users could post tasks for anyone to complete. Users must assign tasks 
-to specific groups or other specific users. Also any kind of locational directions to 
-event locations found on the app will be an out of scope feature that we will not implement. 
-The app will merely be able to indicate the location of an event.
+TaskMaster allows users to actively watch over tasks, marking them as complete, hence deleting them, when necessary. Users are able to add tasks, which gives other users the option to contribute to said task. This allows users to form “groups” which make delegating specific tasks or subtasks easier. Tasks can be extremely long and many obstacles can get in the way of quickly completing tasks, which is why our calendar allows users to have tasks that are days, months, or even years long. 
+
+From the user’s perspective, it is a simple and clean interface. We enable users to create an account. With this, they are able to login and utilize the calendar. If a user forgets their login information, we give them the option to try and recover their account by resetting the password, so long as they provide the correct username and answer to the security question they made when creating the account.
+
           
 # Installation
 
