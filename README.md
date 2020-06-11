@@ -72,24 +72,24 @@ Open up the database app you installed and log in:
 
 ![Image](/img/databaselogin.jpg)
 
-once inside, create two databases: one named **users** and another named **tasks**:
+Once inside, create two databases: one named **users** and another named **tasks**:
 
 ![Image](/img/database1.png)
 
 In the **tasks** database create a table with the following structure: 
 
-> for simplicity, name it **tasks** as well
+> For simplicity, name it **tasks** as well
 
 ![Image](/img/databasetasks.jpg)
 
 In the **users** database create a table with the following structure: 
 
-> for simplicity, name it **users** as well
+> For simplicity, name it **users** as well
 
 ![Image](/img/databaseusers.jpg)
 
 You're almost ready to use TaskMaster!
-At this point, we can now exit this browser
+At this point, we can now exit this browser.
 
 ## **In api**:
 
@@ -113,7 +113,7 @@ DB connection succeeded.
 
 ## **Troubleshooting**:
 
-you might get an error like this:
+You might get an error like this:
 ```bash
 DB connection failed
  Error : {
@@ -134,7 +134,7 @@ DB connection failed
   "fatal": true
 }
 ```
-make sure both the port numbers in the `"port": 3308` and `"port": 8889` lines match the port number used by your database 
+Make sure both the port numbers in the `"port": 3308` and `"port": 8889` lines match the port number used by your database.
 
 > It's best to change both these port numbers to **3308** for WampServer and **8889** for MAMP, as they're the defaults
 
