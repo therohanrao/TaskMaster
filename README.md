@@ -5,14 +5,14 @@
 ## Table of Contents
 * [Description](#description)
 * [Installation](#Installation)
-  * [In my-app](#In-my-app:)
-  * [Database setup](#Database-setup:)
-  * [In api:](#**In-api**:)
+  * [In my-app](#Inmy-app)
+  * [Database setup](#Database-setup)
+  * [In api:](#In-api)
 - [Demo](#demo)
 - [Troubleshooting](#Troubleshooting)
 - [Mid-Quarter Demos](#Mid-Quarter-Demos)
-    * [Presentation #1](#Presentation-#1)
-    * [Presentation #2](#Presentation-#2)
+    * [Presentation #2](#Presentation-2)
+    * [Presentation #1](#Presentation-1)
 - [Contributing](#Contributing)
 
 ## Description
@@ -157,12 +157,12 @@ If any other errors persist, please contact us
 
 ## Mid-Quarter Demos
 
-### Presentation #1
+### Presentation #2
 [![Watch the video](https://img.youtube.com/vi/W_7tX75a0oQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=W_7tX75a0oQ)
 
 ---
 
-### Presentation #2
+### Presentation #1
 [![Watch the video](https://img.youtube.com/vi/Y4Ebtd4wPCY/maxresdefault.jpg)](https://www.youtube.com/watch?v=Y4Ebtd4wPCY)
 
 ## Contributing
