@@ -1,7 +1,21 @@
 ![Image](/img/logo.png)
 
 # TaskMaster 
-#
+
+## Table of Contents
+* [Description](#description)
+* [Installation](#Installation)
+  * [In my-app](#In-my-app:)
+  * [Database setup](#Database-setup:)
+  * [In api:](#**In-api**:)
+- [Demo](#demo)
+- [Troubleshooting](#Troubleshooting)
+- [Mid-Quarter Demos](#Mid-Quarter-Demos)
+    * [Presentation #1](#Presentation-#1)
+    * [Presentation #2](#Presentation-#2)
+- [Contributing](#Contributing)
+
+## Description
  CMD TaskMaster is a task and event-focused calendar application. 
           
 It solves organizational challenges faced by the user(s) as either an individual or member of a community, company, or a group by providing an easy to use framework for events, project development, task distribution, and “to-do” lists with no specific deadline.
@@ -67,7 +81,7 @@ npm start
 
 Open up the database app you installed and log in:
 
-![Image](/img/databaselogin.png)
+![Image](/img/databaselogin.jpg)
 
 once inside, create two databases: one named **users** and another named **tasks**:
 
@@ -103,9 +117,10 @@ DB connection succeeded.
 
 **Welcome to TaskMaster!**
 
-# Demo
+## **Demo**
 
 [![Watch the video](https://img.youtube.com/vi/A7cm_KLtnC4/maxresdefault.jpg)](https://youtu.be/A7cm_KLtnC4)
+
 
 ## **Troubleshooting**:
 
@@ -137,6 +152,18 @@ make sure both the port numbers in the `"port": 3308` and `"port": 8889` lines m
 If any other errors persist, please contact us
 
 ![Image](/img/TMContact.jpg)
+
+---
+
+## Mid-Quarter Demos
+
+### Presentation #1
+[![Watch the video](https://img.youtube.com/vi/W_7tX75a0oQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=W_7tX75a0oQ)
+
+---
+
+### Presentation #2
+[![Watch the video](https://img.youtube.com/vi/Y4Ebtd4wPCY/maxresdefault.jpg)](https://www.youtube.com/watch?v=Y4Ebtd4wPCY)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
