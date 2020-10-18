@@ -54,7 +54,7 @@ const Example = (props) => {
               <NavLink href="/Contact">Contact</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/jrbronkar/TaskMaster">GitHub</NavLink>
+              <NavLink href="https://github.com/therohanrao/TaskMaster">GitHub</NavLink>
             </NavItem>
             
             {/*<UncontrolledDropdown nav inNavbar>

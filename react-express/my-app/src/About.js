@@ -89,7 +89,7 @@ class About extends React.Component {
           for mapping purposes. React is useful because it is not restricted to one OS and 
           because it can be easily repurposed across web and mobile applications. A centralized 
           GitHub repository holds our shared code. You can access our repository 
-          <a href="https://github.com/jrbronkar/TaskMaster"> here</a>. 
+          <a href="https://github.com/therohanrao/TaskMaster"> here</a>. 
           We're currently using SQL for our database.
           </p>
           </div>
