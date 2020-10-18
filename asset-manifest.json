@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/TaskMaster/static/js/main.d1a6ddea.chunk.js",
+    "main.js.map": "/TaskMaster/static/js/main.d1a6ddea.chunk.js.map",
+    "runtime-main.js": "/TaskMaster/static/js/runtime-main.16bf0578.js",
+    "runtime-main.js.map": "/TaskMaster/static/js/runtime-main.16bf0578.js.map",
+    "static/css/2.9ae8384b.chunk.css": "/TaskMaster/static/css/2.9ae8384b.chunk.css",
+    "static/js/2.307dd037.chunk.js": "/TaskMaster/static/js/2.307dd037.chunk.js",
+    "static/js/2.307dd037.chunk.js.map": "/TaskMaster/static/js/2.307dd037.chunk.js.map",
+    "index.html": "/TaskMaster/index.html",
+    "precache-manifest.bf507c9d5f07ccfac05bb747ccb4387a.js": "/TaskMaster/precache-manifest.bf507c9d5f07ccfac05bb747ccb4387a.js",
+    "service-worker.js": "/TaskMaster/service-worker.js",
+    "static/css/2.9ae8384b.chunk.css.map": "/TaskMaster/static/css/2.9ae8384b.chunk.css.map",
+    "static/js/2.307dd037.chunk.js.LICENSE.txt": "/TaskMaster/static/js/2.307dd037.chunk.js.LICENSE.txt",
+    "static/media/JR_logo.png": "/TaskMaster/static/media/JR_logo.c8519cc6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.16bf0578.js",
+    "static/css/2.9ae8384b.chunk.css",
+    "static/js/2.307dd037.chunk.js",
+    "static/js/main.d1a6ddea.chunk.js"
+  ]
+}
