@@ -1,3 +1,6 @@
+# Demo
+  Try out a limited demo of the frontend [here](https://therohanrao.github.io/TaskMaster/)!
+
 ![Image](/img/logo.png)
 
 # TaskMaster 
